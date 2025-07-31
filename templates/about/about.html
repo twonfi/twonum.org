@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <h1>Hey, twonum here</h1>
+  <p id="page-info">Developer &bull; Vancouver, BC &bull; <a href="https://hackclub.com">Hack Club</a> member</p>
+
+  <h2>Guestbook</h2>
+  <p>
+    Before the advent of social media, there was the guestbook, which let site visitors communicate with its
+    owner&mdash;<i>ahem</i>&mdash;enough yapping. Here's my guestbook.
+  <p>
+    Some may consider a relic of the past, but hey&mdash;it might as well be a way against all the social media stuff.
+  <p>
+    Besides the guestbook, there was the hit counter. I have one too: <b>{{ time_machine.hits }} requests</b> have been made to this page.
+  </p>
+{% include 'core/comments.html' with object=time_machine %}
+{% endblock %}
+

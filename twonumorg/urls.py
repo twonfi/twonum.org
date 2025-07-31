@@ -28,6 +28,7 @@ urlpatterns = [
     # twonum.org
     path("posts/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),
+    path("about/", include("about.urls")),
 ]
 
 # Handle media files in development

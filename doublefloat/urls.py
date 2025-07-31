@@ -4,6 +4,6 @@ from .views import *
 
 app_name = "doublefloat"
 
-urlpatterns = (
+urlpatterns = [
     path("<slug:slug>/", view_post, name="view_post"),
-)
+]

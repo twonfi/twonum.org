@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     "core",
     "doublefloat",
     "projects",
+    "about",
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 
