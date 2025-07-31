@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "allauth.mfa",
     "widget_tweaks",
     "slippers",
+    "django_minify_html",
     # django-crispy-forms
     "crispy_forms",
     "crispy_bootstrap5",
@@ -96,6 +97,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     # From packages
+    "django_minify_html.middleware.MinifyHtmlMiddleware",
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
