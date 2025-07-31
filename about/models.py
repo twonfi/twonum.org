@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.sites.models import Site
 
 
@@ -10,3 +11,7 @@ class TimeMachine(models.Model):
 
     def __str__(self):
         return str(self.site)
+
+    @staticmethod
+    def get_absolute_url():
+        return reverse("about:about")
