@@ -3,6 +3,6 @@
 
 {% block main %}
   <p id="page-info">Posted by {{ post.author.username }} {{ post.date }}</p>
-
 {{ post.body|sanitized_markdown|safe }}
+{% include 'core/comments.html' with object=p %}
 {% endblock main %}
