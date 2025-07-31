@@ -79,8 +79,9 @@ INSTALLED_APPS = [
     "django_comments_xtd",
     "django_comments",
     # twonum.org
-    "doublefloat",
     "core",
+    "doublefloat",
+    "projects",
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 
@@ -280,7 +281,7 @@ MARTOR_ALTERNATIVE_CSS_FILE_THEME = 'martor/martor.css'
 COMMENTS_APP = "django_comments_xtd"
 COMMENTS_XTD_MAX_THREAD_LEVEL = 2
 COMMENTS_XTD_APP_MODEL_OPTIONS = {
-    'doublefloat.post': {
+    'default': {
         'allow_flagging': True,
         'allow_feedback': True,
         'show_feedback': True,
@@ -289,7 +290,7 @@ COMMENTS_XTD_APP_MODEL_OPTIONS = {
 }
 COMMENTS_XTD_FROM_EMAIL = env("EMAIL_FROM")
 COMMENTS_XTD_CONTACT_EMAIL = env("EMAIL_CONTACT")
-COMMENTS_XTD_API_GET_USER_AVATAR = "core.utils.avatar_url_from_comment"
+# COMMENTS_XTD_API_GET_USER_AVATAR = "core.utils.avatar_url_from_comment"
 
 # django-avatar
 AVATAR_PROVIDERS = (

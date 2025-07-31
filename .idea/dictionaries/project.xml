@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>doublefloat</w>
+      <w>truncatechars</w>
       <w>twonum</w>
     </words>
   </dictionary>

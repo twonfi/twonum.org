@@ -1,0 +1,31 @@
+{% load static %}
+{% load comments %}
+{% load comments_xtd %}
+<div id="comments"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" integrity="sha512-QVs8Lo43F9lSuBykadDb0oSXDL/BbZ588urWVCRwSIoewQv/Ewg1f84mK3U790bZ0FfhFa1YSQUmIhG+pIRKeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" integrity="sha512-6a1107rTlA4gYpgHAqbwLAtxmWipBdJFcq8y5S/aTge3Bp+VAklABm2LO+Kg51vOWR9JMZq1Ovjl5tpluNpTeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/2.0.1/remarkable.min.js" integrity="sha512-skYYbQHAuOTpeJTthhUH3flZohep8blA+qjZOY0VqmfXMDiYcWxu29F5UbxU4LxaIpGkRBk+3Qf8qaXfd9jngg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--suppress JSUnresolvedReference -->
+<script nonce="{{ request.csp_nonce }}">
+window.comments_props = {% get_commentbox_props for object %};
+window.comments_props_override = {
+  allow_comments: {% if object.allow_comments %}true{% else %}false{% endif %},
+  allow_feedback: true,
+  show_feedback: true,
+  allow_flagging: true,
+  polling_interval: 15000 // ms
+};
+</script>
+{% comment 'We already have Bootstrap' %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endcomment %}
+<script src="{% url 'javascript-catalog' %}"></script>
+<script src="{% static 'django_comments_xtd/js/django-comments-xtd-2.10.7.js' %}"></script>
+<!--suppress JSUnresolvedReference -->
+<script nonce="{{ request.csp_nonce }}">
+window.addEventListener('DOMContentLoaded', (_) => {
+  const tooltipQs = '[data-bs-toggle="tooltip"]';
+  const tooltipList = document.querySelectorAll(tooltipQs);
+  [...tooltipList].map(el => new bootstrap.Tooltip(el, {html: true}));
+});
+</script>
