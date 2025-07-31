@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     "django_comments",
     # twonum.org
     "doublefloat",
+    "core",
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 

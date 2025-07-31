@@ -1,0 +1,45 @@
+#skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+body {
+  font-family: Outfit, system-ui, sans-serif;
+}
+
+main {
+  padding: 1em 3em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  background-image: linear-gradient(to bottom, white 0%, #999 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  padding-bottom: 3px;
+  border-bottom: 3px #ddd dashed;
+  width: fit-content;
+  font-size: 2.1em;
+}
+
+#page-info {
+  text-align: center;
+  font-size: 1.1em;
+}

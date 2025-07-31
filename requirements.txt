@@ -2,6 +2,7 @@ Django~=5.2.1
 psycopg~=3.2.9
 django-allauth[socialaccount,mfa]~=65.9.0
 django-allauth-ui~=1.8.1
+fido2~=2.0.0
 django-widget-tweaks~=1.5.0
 slippers~=0.6.2
 Markdown~=3.5.1

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+
+{% block main %}
+  <p id="page-info">Posted by {{ post.author.username }} {{ post.date }}</p>
+
+{{ post.body|sanitized_markdown|safe }}
+{% endblock main %}
