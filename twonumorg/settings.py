@@ -285,7 +285,7 @@ COMMENTS_XTD_APP_MODEL_OPTIONS = {
         'allow_flagging': True,
         'allow_feedback': True,
         'show_feedback': True,
-        'who_can_post': 'users',
+        'who_can_post': 'all',
     },
 }
 COMMENTS_XTD_FROM_EMAIL = env("EMAIL_FROM")
