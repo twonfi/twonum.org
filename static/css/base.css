@@ -14,6 +14,30 @@
 
 body {
   font-family: Outfit, system-ui, sans-serif;
+  background-color: #1e1e2e;
+}
+
+nav.navbar {
+  /* Catppuccin */
+  background-color: #181825;
+  color: #cdd6f4;
+}
+
+main {
+  /*color: #cdd6f4;*/
+  a:not(.btn) {
+    color: #89b4fa;
+    text-decoration-style: dotted;
+  }
+  a:hover {
+    text-decoration-style: solid;
+  }
+  a:active {
+    text-decoration-style: wavy;
+  }
+  a:not(.btn):visited {
+    color: #cba6f7;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -30,7 +54,7 @@ h1 {
 
 h2 {
   padding-bottom: 3px;
-  border-bottom: 3px #7f849c solid;  /* Catppuccin Mocha */
+  border-bottom: 3px #7f849c solid;  /* Catppuccin */
   width: fit-content;
   font-size: 2.1em;
 }
