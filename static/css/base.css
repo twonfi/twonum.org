@@ -87,6 +87,9 @@ section, article {
   li {
     list-style: none;
     display: inline;
+    a {
+      color: white !important;
+    }
     i {
       margin: 0 .2em;
       font-size: 32px;
