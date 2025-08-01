@@ -1,3 +1,7 @@
+#projects .card {
+  max-width: 100%;
+}
+
 .lang-icons {
   margin: 1em auto;
   padding: 0;

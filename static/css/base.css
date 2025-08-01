@@ -16,10 +16,6 @@ body {
   font-family: Outfit, system-ui, sans-serif;
 }
 
-main {
-  padding: 1em 3em;
-}
-
 h1,h2,h3,h4,h5,h6 {
   font-family: monospace;
 }
