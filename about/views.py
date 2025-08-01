@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .models import TimeMachine
+from projects.models import Project
 
 
 def about(request):
@@ -11,7 +12,8 @@ def about(request):
     context = {
         "title": "About me",
         "h1_from_title": False,
-        "time_machine": TimeMachine.objects.get(site=request.site)
+        "time_machine": time_machine,
+        "projects": Project.objects.all().order_by('-id')[:4],
     }
 
     return render(request, "about/about.html", context)

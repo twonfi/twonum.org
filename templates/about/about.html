@@ -1,32 +1,81 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock head %}
 
 {% block main %}
   <h1>Hey, twonum here</h1>
   <p id="page-info">Developer &bull; Vancouver, BC &bull; <a href="https://hackclub.com">Hack Club</a> member</p>
+  <ul class="lang-icons text-light">
+    <li><i class="devicon-python-plain" title="Python"></i></li>
+    <li><i class="devicon-cplusplus-plain" title="C++"></i></li>
+    <li><i class="devicon-html5-plain" title="HTML"></i></li>
+    {% comment 'devicons/devicon#2533' %}<li><i class="devicon-css-plain" title="CSS"></i></li>{% endcomment %}
+    <li><i class="devicon-javascript-plain" title="JavaScript"></i></li>
+    <li><i class="devicon-swift-plain" title="Swift"></i></li>
+    <li><i class="devicon-java-plain" title="Java"></i></li>
+  </ul>
+  <ul class="lang-icons text-light">
+    <li><i class="devicon-linux-plain" title="Linux"></i></li>
+    <li><i class="devicon-git-plain" title="Git"></i></li>
+    <li><i class="devicon-neovim-plain" title="Neovim"></i></li>
+    <li><i class="devicon-vscode-plain" title="VS Code"></i></li>
+    <li><i class="devicon-jetbrains-plain" title="JetBrains IDEs"></i></li>
+    <li><i class="devicon-figma-plain" title="Figma"></i></li>
+  </ul>
 
-  <h2>Contact me</h2>
-  <p>If you want to contact me on a platform, see my <a href="https://hub.twonum.org">link hub</a>.</p>
+  <section>
+    <h2>Who am I?</h2>
+    <p>I'm a software and hardware developer and computer science student from Vancouver, <abbr
+            title="British Columbia">BC</abbr>, Canada.</p>
+  </section>
 
-  <h3>Email</h3>
-  <h4>Policy</h4>
-  <p>In short, <b>don't spam me</b>. My <em>voicemail</em> is scam-filled already, so don't make it worse.
-  <p>Try not to solicit me (unless I vaguely "trust" you, or you're from Hack Club).</p>
+  <section>
+    <h2>My projects</h2>
+    <p>Why not see them for yourself?</p>
+    <div id="projects">
+      {% for p in projects %}
+        <div class="card" style="width: 24rem;">
+          <img src="{{ p.banner.url }}" class="card-img-top" alt>
+          <div class="card-body">
+            <span class="card-subtitle mb-2 text-body-secondary">{{ p.author }}</span>
+            <h3 class="cards-title"><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></h3>
+            <p class="card-text">{{ p.desc|strip_markdown|truncatechars:180 }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  <hr>
+  <section>
+    <h2>Contact me</h2>
+    <p>If you want to contact me on a platform, see my <a href="https://hub.twonum.org">link hub</a>.</p>
 
-  <h4>My (encoded) email address</h4>
-  <p>
-    My email address is encoded in
-    <a href="https://emn178.github.io/online-tools/base32_decode.html">UTF-8 Base32</a>:
-    <code>IJ4SAZDFMNXWI2LOM4QHI2DJOMQGCZ3BNFXCYIDZN52SAYLHOJSWKIDUN4QGQ5DUOBZTULZPOMXHI53PNZ2W2LTPOJTS6ZLNMFUWYORAJ5JDGVZWKFCFKTZVLBLTINKMJZDFUWCYIVNFSPI=</code>
-  </p>
+    <h3>Email</h3>
+    <h4>Policy</h4>
+    <p>In short, <b>don't spam me</b>. My <em>voicemail</em> is scam-filled already, so don't make it worse.
+    <p>Try not to solicit me (unless I vaguely "trust" you, or you're from Hack Club).</p>
 
-  <h2>Guestbook</h2>
-  <p>
-    Before the advent of social media, there was the guestbook, which let site visitors communicate with its
-    owner&mdash;<i>ahem</i>&mdash;enough yapping. Here's my guestbook.
-    Some may consider this a relic of the past, but hey&mdash;it might as well be a way against all the social media stuff.
-  <p>
-    Besides the guestbook, there was the hit counter. I have one too: <b>{{ time_machine.hits }} requests</b> have been made to this page.
-  </p>
+    <h4>My (encoded) email address</h4>
+    <p>
+      My email address is encoded in
+      <a href="https://emn178.github.io/online-tools/base32_decode.html">UTF-8 Base32</a>:
+      <code>IJ4SAZDFMNXWI2LOM4QHI2DJOMQGCZ3BNFXCYIDZN52SAYLHOJSWKIDUN4QGQ5DUOBZTULZPOMXHI53PNZ2W2LTPOJTS6ZLNMFUWYORAJ5JDGVZWKFCFKTZVLBLTINKMJZDFUWCYIVNFSPI=</code>
+    </p>
+
+    <h2>Guestbook</h2>
+    <p>
+      Before the advent of social media, there was the guestbook, which let site visitors communicate with its
+      owner&mdash;<i>ahem</i>&mdash;enough yapping. Here's my guestbook.
+      Some may consider this a relic of the past, but hey&mdash;it might as well be a way against all the social media stuff.
+    <p>
+      Besides the guestbook, there was the hit counter.
+      I have one too: <b>{{ time_machine.hits }} requests</b> have been made to this page.
+    </p>
+  </section>
 {% include 'core/comments.html' with object=time_machine %}
 {% endblock %}
 
