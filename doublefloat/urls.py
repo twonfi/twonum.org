@@ -6,4 +6,5 @@ app_name = "doublefloat"
 
 urlpatterns = [
     path("<slug:slug>/", view_post, name="view_post"),
+    path("", home, name="home"),
 ]

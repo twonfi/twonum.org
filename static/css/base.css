@@ -25,7 +25,7 @@ nav.navbar {
 
 main {
   /*color: #cdd6f4;*/
-  a:not(.btn) {
+  a:not(.btn):not(.page-link) {
     color: #89b4fa;
     text-decoration-style: dotted;
   }
@@ -35,7 +35,7 @@ main {
   a:active {
     text-decoration-style: wavy;
   }
-  a:not(.btn):visited {
+  a:not(.btn):not(.page-link):visited {
     color: #cba6f7;
   }
 }
@@ -59,6 +59,11 @@ h2 {
   font-size: 2.1em;
 }
 
+hgroup:has(h1) p {
+  font-size: 1.7em;
+  text-align: center;
+}
+
 #page-info {
   text-align: center;
   font-size: 1.1em;
@@ -68,9 +73,23 @@ h2 {
   margin: 0 .3em;
 }
 
-section {
+section, article {
   background-color: #313244;
   border-radius: 15px;
   margin: 2em 0;
   padding: 1em;
+}
+
+.icon-group {
+  margin: 1em auto;
+  padding: 0;
+  text-align: center;
+  li {
+    list-style: none;
+    display: inline;
+    i {
+      margin: 0 .2em;
+      font-size: 32px;
+    }
+  }
 }

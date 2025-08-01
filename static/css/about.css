@@ -1,17 +1,3 @@
 #projects .card {
   max-width: 100%;
 }
-
-.lang-icons {
-  margin: 1em auto;
-  padding: 0;
-  text-align: center;
-  li {
-    list-style: none;
-    display: inline;
-    i {
-      margin: 0 .2em;
-      font-size: 32px;
-    }
-  }
-}
