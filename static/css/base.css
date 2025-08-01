@@ -30,7 +30,7 @@ h1 {
 
 h2 {
   padding-bottom: 3px;
-  border-bottom: 3px #ddd dashed;
+  border-bottom: 3px #7f849c solid;  /* Catppuccin Mocha */
   width: fit-content;
   font-size: 2.1em;
 }
