@@ -67,3 +67,10 @@ h2 {
 .btnset * {
   margin: 0 .3em;
 }
+
+section {
+  background-color: #313244;
+  border-radius: 15px;
+  margin: 2em 0;
+  padding: 1em;
+}
