@@ -17,13 +17,13 @@ body {
   background-color: #1e1e2e;
 }
 
-nav.navbar {
+nav.navbar, footer {
   /* Catppuccin */
   background-color: #181825;
   color: #cdd6f4;
 }
 
-main {
+main, footer {
   /*color: #cdd6f4;*/
   a:link:not(.btn):not(.page-link) {
     color: #89b4fa;
