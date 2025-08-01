@@ -29,6 +29,7 @@ urlpatterns = [
     path("posts/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),
     path("about/", include("about.urls")),
+    path("", include("home.urls")),
 ]
 
 # Handle media files in development

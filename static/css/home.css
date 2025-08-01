@@ -1,0 +1,25 @@
+#work {
+  display: flex;
+  background-color: #45475a;
+  padding: 0;
+  border-radius: 1em;
+
+  * {
+    margin: 1em;
+  }
+  h3 {
+    margin: 0;
+    a {
+      margin: 0;
+    }
+  }
+}
+
+#fetch {
+  display: flex;
+  padding: 0;
+
+  #fetch-info {
+    margin-left: 1em;
+  }
+}
