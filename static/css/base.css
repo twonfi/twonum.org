@@ -25,18 +25,18 @@ nav.navbar {
 
 main {
   /*color: #cdd6f4;*/
-  a:not(.btn):not(.page-link) {
+  a:link:not(.btn):not(.page-link) {
     color: #89b4fa;
     text-decoration-style: dotted;
   }
+  a:visited:not(.btn):not(.page-link) {
+    color: #cba6f7;
+  }
   a:hover {
-    text-decoration-style: solid;
+    text-decoration-style: solid !important;
   }
   a:active {
-    text-decoration-style: wavy;
-  }
-  a:not(.btn):not(.page-link):visited {
-    color: #cba6f7;
+    text-decoration-style: wavy !important;
   }
 }
 
