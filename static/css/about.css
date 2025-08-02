@@ -1,3 +1,8 @@
-#projects .card {
-  max-width: 100%;
+#projects {
+  display: flex;
+
+  .card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
