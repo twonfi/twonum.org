@@ -13,7 +13,7 @@ def about(request):
         "title": "About me",
         "h1_from_title": False,
         "time_machine": time_machine,
-        "projects": Project.objects.all().order_by('-id')[:4],
+        "projects": Project.objects.all().order_by('-date')[:4],
     }
 
     return render(request, "about/about.html", context)
