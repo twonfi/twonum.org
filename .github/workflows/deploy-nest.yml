@@ -7,12 +7,20 @@ jobs:
   deploy:
     if: github.repository == 'twonfi/twonum.org'
     runs-on: [ self-hosted, nest ]
+    defaults:
+      run:
+        working-directory: /home/twonum/twonum.org
     steps:
-    - name: Nest shell
+    - name: Activate venv
       run: |
-        cd $HOME/twonum.org
         source .venv/bin/activate
+    - name: Pull
+      run: |
         git pull
-        python3 manage.py collectstatic --noinput
+    - name: Migrate
+      run: |
+        python3 collectstatic --noinput
         python3 manage.py migrate
+    - name: Restart
+      run: |
         systemctl --user restart twonum.org
