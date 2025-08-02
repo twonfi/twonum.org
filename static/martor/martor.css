@@ -1,0 +1,9 @@
+.martor-preview {
+  color: black;
+}
+
+div#main > main#content-start.content {
+  /* Admin site */
+  background-color: var(--body-bg);
+  color: var(--body-quiet-color);
+}
