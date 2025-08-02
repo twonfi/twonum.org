@@ -12,7 +12,7 @@ from doublefloat.sitemaps import DoubleFloatSitemap
 from projects.sitemaps import ProjectsSitemap
 
 admin.site.site_header = f"twonum.org administration"
-admin.site.site_title = f"Administration — twonum.org"
+admin.site.site_title = f"Administration – twonum.org"  # En dash
 
 admin.autodiscover()
 admin.site.login = secure_admin_login(admin.site.login)
