@@ -12,6 +12,7 @@ def about(request):
     context = {
         "title": "About me",
         "h1_from_title": False,
+        "masonry": True,
         "time_machine": time_machine,
         "projects": Project.objects.all().order_by('-date')[:4],
     }

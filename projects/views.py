@@ -6,6 +6,7 @@ from .models import Project
 def home(request):
     context = {
         "title": "My projects",
+        "masonry": True,
         "projects": Project.objects.all(),
     }
 

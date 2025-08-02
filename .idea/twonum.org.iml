@@ -21,6 +21,7 @@
     <orderEntry type="library" name="masonry" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
     <orderEntry type="library" name="devicon" level="application" />
+    <orderEntry type="library" name="imagesloaded" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
