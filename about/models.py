@@ -6,7 +6,7 @@ from django.contrib.sites.models import Site
 class TimeMachine(models.Model):
     site = models.OneToOneField(Site, on_delete=models.CASCADE,
         primary_key=True)
-    hits = models.PositiveBigIntegerField()
+    hits = models.PositiveBigIntegerField(default=0)
     allow_comments = True  # Guestbook uses django-comments-xtd
 
     def __str__(self):

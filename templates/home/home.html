@@ -13,16 +13,20 @@
   <section>
     <h2>Some of my stuff</h2>
     <div id="work">
-      <article>
-        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> on DoubleFloat</h3>
+      {% if post %}
+        <article>
+          <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> on DoubleFloat</h3>
 {{ post.body|strip_markdown|truncatechars:500 }}
-      </article>
+        </article>
+      {% endif %}
 
-      <article>
-    <img class="mw-100 mx-auto mb-2" src="{{ project.banner.url }}" alt>
-        <h3><a href="{{ project.get_absolute_url }}">{{ project.name }}</a> by {{ project.author }}</h3>
+      {% if project %}
+        <article>
+          <img class="mw-100 mx-auto mb-2" src="{{ project.banner.url }}" alt>
+          <h3><a href="{{ project.get_absolute_url }}">{{ project.name }}</a> by {{ project.author }}</h3>
 {{ project.desc|strip_markdown|truncatechars:500 }}
-      </article>
+        </article>
+      {% endif %}
     </div>
   </section>
 
