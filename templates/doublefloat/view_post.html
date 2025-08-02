@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load markdown_extras %}
 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/view-post.css' %}">
+{% endblock %}
+
 {% block main %}
-  <p id="page-info">Posted by {{ post.author.username }} {{ post.date }}</p>
+  <p id="page-info">
+    Posted by {{ post.author.username }} {{ post.date }}
+    <span id="categories">
+      {% for cat in post.categories.all %}
+        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+      {% endfor %}
+    </span>
+  </p>
 {{ post.body|sanitized_markdown|safe }}
 {% include 'core/comments.html' with object=post %}
 {% endblock main %}

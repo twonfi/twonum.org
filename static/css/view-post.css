@@ -1,0 +1,11 @@
+#categories {
+  display: block;
+  padding-top: .5em;
+  a {
+    display: inline-block;
+    color: #89b4fa;
+    background-color: #181825;
+    padding: .4em 1em;
+    border-radius: 50px;
+  }
+}

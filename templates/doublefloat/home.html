@@ -25,33 +25,5 @@
     </article>
   {% endfor %}
 
-  <nav aria-label="Pagination">
-    <ul class="pagination">
-      {% if pagination.has_previous %}
-        <li class="page-item" aria-label="Previous">
-          <a class="page-link" href="?page={{ pagination.previous_page_number }}" aria-hidden="true">&raquo;</a>
-        </li>
-      {% else %}
-        <li class="page-item disabled" aria-label="No previous"><span class="page-link" aria-hidden="true">&laquo;</span></li>
-      {% endif %}
-
-      {% for e in elided %}
-        {% if e == '...' %}
-          <li class="page-item"><span class="page-link">&hellip;</span></li>
-        {% else %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ e }}" aria-hidden="true">{{ e }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-
-      {% if pagination.has_next %}
-        <li class="page-item" aria-label="Next">
-          <a class="page-link" href="?page={{ pagination.next_page_number }}">&raquo;</a>
-        </li>
-      {% else %}
-        <li class="page-item disabled" aria-label="No next"><span class="page-link" aria-hidden="true">&raquo;</span></li>
-      {% endif %}
-    </ul>
-  </nav>
+  {% include 'core/pagination.html' with pagination=pagination elided=elided %}
 {% endblock main %}

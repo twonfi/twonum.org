@@ -9,12 +9,24 @@ User = settings.AUTH_USER_MODEL
 
 
 class Category(models.Model):
-    slug = models.SlugField(max_length=255)
     title = models.CharField(max_length=255, unique=True)
     desc = MartorField("Description")
+    slug = models.SlugField(max_length=255, blank=True)
 
     class Meta:
         verbose_name_plural = "categories"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)[:50]
+        super(Category, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('doublefloat:category',
+            kwargs={"slug": self.slug})
 
 
 class Post(models.Model):

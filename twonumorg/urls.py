@@ -26,7 +26,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("_martor/", include("martor.urls")),
     # twonum.org
-    path("posts/", include("doublefloat.urls")),
+    path("doublefloat/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),
     path("about/", include("about.urls")),
     path("", include("home.urls")),
