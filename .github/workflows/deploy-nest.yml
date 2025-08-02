@@ -6,7 +6,7 @@ on:
 jobs:
   deploy:
     if: github.repository == 'twonfi/twonum.org'
-    runs-on: nest
+    runs-on: [ self-hosted, nest ]
     steps:
     - name: Setup
       run: |
