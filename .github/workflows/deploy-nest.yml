@@ -11,14 +11,12 @@ jobs:
       run:
         working-directory: /home/twonum/twonum.org
     steps:
-    - name: Activate venv
-      run: |
-        source .venv/bin/activate
     - name: Pull
       run: |
         git pull
     - name: Migrate
       run: |
+        source .venv/bin/activate
         python3 manage.py collectstatic --noinput
         python3 manage.py migrate
     - name: Restart
