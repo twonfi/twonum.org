@@ -27,6 +27,9 @@ class DoubleFloatFeed(Feed):
     def item_pubdate(self, item):
         return item.date
 
+    def item_categories(self, item):
+        return [c.title for c in item.categories.all()]
+
 
 class DoubleFloatRSSFeed(DoubleFloatFeed):
     feed_type = Rss201rev2Feed
