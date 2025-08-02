@@ -11,12 +11,8 @@ from allauth.account.decorators import secure_admin_login
 from doublefloat.sitemaps import DoubleFloatSitemap
 from projects.sitemaps import ProjectsSitemap
 
-try:
-    site = get_current_site(None)
-    admin.site.site_header = f"{site.name} administration"
-    admin.site.site_title = f"{site.name} site admin"
-except OperationalError:
-    pass
+admin.site.site_header = f"twonum.org administration"
+admin.site.site_title = f"Administration &mdash; twonum.org"
 
 admin.autodiscover()
 admin.site.login = secure_admin_login(admin.site.login)
