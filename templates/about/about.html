@@ -37,7 +37,7 @@
   <section>
     <h2>My projects</h2>
     <p>Why not see them for yourself?</p>
-    <div id="projects">
+    <div id="projects" data-masonry='{"itemSelector": "article.card" }'>
       {% for p in projects %}
         <div class="card" style="width: 24rem;">
           <img src="{{ p.banner.url }}" class="card-img-top" alt>

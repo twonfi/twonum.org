@@ -12,17 +12,18 @@
     <pre>
 user@{{ request.site.domain }}:/projects$ ls --card
 total {{ projects.count }}</pre>
-    <div id="project-list" class="row" data-masonry='{"itemSelector": "article.card" }'></div>
-    {% for p in projects %}
-      <article class="card" style="width: 24rem;">
-        <img src="{{ p.banner.url }}" class="card-img-top" alt>
-        <div class="card-body">
-          <span class="card-subtitle mb-2 text-body-secondary">{{ p.author }}</span>
-          <h3 class="cards-title"><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></h3>
-          <p class="card-text">{{ p.desc|strip_markdown|truncatechars:180 }}</p>
-        </div>
-      </article>
-    {% endfor %}
+    <div id="project-list" class="row" data-masonry='{"itemSelector": "article.card" }'>
+      {% for p in projects %}
+        <article class="card" style="width: 24rem;">
+          <img src="{{ p.banner.url }}" class="card-img-top" alt>
+          <div class="card-body">
+            <span class="card-subtitle mb-2 text-body-secondary">{{ p.author }}</span>
+            <h3 class="cards-title"><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></h3>
+            <p class="card-text">{{ p.desc|strip_markdown|truncatechars:180 }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
     <br>
     <h3>Classic rwx</h3>
     <pre>
