@@ -2,6 +2,11 @@
 {% load markdown_extras %}
 
 {% block main %}
+  <ul class="icon-group">
+    <li><a href="{% url 'projects:rss_feed' %}" aria-label="RSS"><i class="fa fa-rss" title="RSS"></i></a></li>
+    <li><a href="{% url 'projects:atom_feed' %}" aria-label="Atom"><i class="fa fa-atom" title="Atom"></i></a></li>
+  </ul>
+
   <section>
     <h2>Listing</h2>
     <pre>
