@@ -8,17 +8,11 @@ jobs:
     if: github.repository == 'twonfi/twonum.org'
     runs-on: [ self-hosted, nest ]
     steps:
-    - name: Setup
+    - name: Nest shell
       run: |
         cd $HOME/twonum.org
         source .venv/bin/activate
-    - name: Pull
-      run: |
         git pull
-    - name: Migrate
-      run: |
-        python3 collectstatic --noinput
+        python3 manage.py collectstatic --noinput
         python3 manage.py migrate
-    - name: Restart
-      run: |
         systemctl --user restart twonum.org
