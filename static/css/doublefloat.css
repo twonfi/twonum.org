@@ -1,6 +1,7 @@
 #categories {
   display: block;
   padding-top: .5em;
+  text-align: center;
   a {
     display: inline-block;
     color: #89b4fa;

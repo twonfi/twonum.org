@@ -26,6 +26,7 @@ def home(request):
         "h1_from_title": False,
         "posts": page_obj,
         "elided": elided_page_range,
+        "categories": Category.objects.all(),
     }
 
     return render(request, "doublefloat/home.html", context)

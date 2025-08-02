@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load markdown_extras %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/doublefloat.css' %}">
+{% endblock %}
 
 {% block main %}
   <hgroup>
@@ -10,6 +15,11 @@
     <li><a href="{% url 'doublefloat:rss_feed' %}" aria-label="RSS"><i class="fa fa-rss" title="RSS"></i></a></li>
     <li><a href="{% url 'doublefloat:atom_feed' %}" aria-label="Atom"><i class="fa fa-atom" title="Atom"></i></a></li>
   </ul>
+  <div id="categories">
+    {% for cat in categories %}
+      <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+    {% endfor %}
+  </div>
   <section>
     <h2>What is DoubleFloat?</h2>
     <p>
