@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.humanize",
+    "django.contrib.sitemaps",
     # Single-line stuff
     "tz_detect",
     "django_bootstrap5",

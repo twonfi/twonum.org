@@ -5,7 +5,11 @@ from django.conf.urls.static import static
 from django.contrib.sites.shortcuts import get_current_site
 from django.db.utils import OperationalError
 from django.views.i18n import JavaScriptCatalog
+from django.contrib.sitemaps.views import index, sitemap
 from allauth.account.decorators import secure_admin_login
+
+from doublefloat.sitemaps import DoubleFloatSitemap
+from projects.sitemaps import ProjectsSitemap
 
 try:
     site = get_current_site(None)
@@ -17,6 +21,11 @@ except OperationalError:
 admin.autodiscover()
 admin.site.login = secure_admin_login(admin.site.login)
 
+sitemaps = {
+    "doublefloat": DoubleFloatSitemap,
+    "projects": ProjectsSitemap,
+}
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
@@ -25,6 +34,10 @@ urlpatterns = [
     path("avatar/", include("avatar.urls")),
     path("accounts/", include("allauth.urls")),
     path("_martor/", include("martor.urls")),
+    # Sitemaps
+    path('sitemap.xml', index, {'sitemaps': sitemaps}),
+    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
     # twonum.org
     path("doublefloat/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),
