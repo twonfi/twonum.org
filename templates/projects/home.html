@@ -12,7 +12,7 @@
     <pre>
 user@{{ request.site.domain }}:/projects$ ls --card
 total {{ projects.count }}</pre>
-    <div id="project-list" class="row" data-masonry='{"itemSelector": "article.card" }'>
+    <div id="project-list" class="row" data-masonry='{"itemSelector": "article.card", "percentPosition": true }'>
       {% for p in projects %}
         <article class="card" style="width: 24rem;">
           <img src="{{ p.banner.url }}" class="card-img-top" alt>
