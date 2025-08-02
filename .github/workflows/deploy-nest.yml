@@ -19,7 +19,7 @@ jobs:
         git pull
     - name: Migrate
       run: |
-        python3 collectstatic --noinput
+        python3 manage.py collectstatic --noinput
         python3 manage.py migrate
     - name: Restart
       run: |
