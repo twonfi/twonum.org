@@ -1,4 +1,5 @@
 name: Deploy Nest
+concurrency: production
 on:
   push:
     branches:
