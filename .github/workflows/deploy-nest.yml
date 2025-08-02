@@ -8,6 +8,7 @@ jobs:
   deploy:
     if: github.repository == 'twonfi/twonum.org'
     runs-on: [ self-hosted, nest ]
+    environment: production
     defaults:
       run:
         working-directory: /home/twonum/twonum.org
