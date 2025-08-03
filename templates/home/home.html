@@ -34,7 +34,7 @@
     <h2>Stats</h2>
     <pre id="stats">
 twonum@{{ request.site.domain }}:/projects$ twofetch
-<div id="fetch"><div aria-hidden="true">
+<span id="fetch"><span aria-hidden="true">
     -------
    /       \
   /         \
@@ -49,9 +49,10 @@ twonum@{{ request.site.domain }}:/projects$ twofetch
            \
             \
              \
-</div><div id="fetch-info">
+</span><span id="fetch-info">
 twonum@{{ request.site.domain }}
-<hr>OS: Debian GNU/Linux
+<span aria-hidden="true">------------------</span>
+OS: Debian GNU/Linux
 Host: <a href="//hackclub.app/">Nest</a>
 Browser: Mozilla Firefox
 Uptime: [unavailable] yrs
@@ -61,8 +62,8 @@ City: Vancouver, British Columbia, Canada
 Email: <a href="{% url 'about:about' %}#contact">Contact page</a>
 Global Domain: twonum.org
 Locale: en_ca.UTF-8
-</div></div>
+</span></span>
 </pre>
-    <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="60"><iframe>
+    <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="60"></iframe>
   </section>
 {% endblock main %}
