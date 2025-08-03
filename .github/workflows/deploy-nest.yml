@@ -1,5 +1,5 @@
 name: Deploy Nest
-concurrency: production
+concurrency: nest
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ jobs:
   deploy:
     if: github.repository == 'twonfi/twonum.org'
     runs-on: [ self-hosted, nest ]
-    environment: production
+    environment: nest
     defaults:
       run:
         working-directory: /home/twonum/twonum.org
