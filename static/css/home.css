@@ -28,3 +28,10 @@
     margin-left: 1em;
   }
 }
+
+#webring {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
