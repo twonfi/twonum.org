@@ -7,12 +7,12 @@
     <p>Posts on DoubleFloat</p>
   </hgroup>
 
-{{ cat.desc|sanitized_markdown|safe }}
+{{ cat.desc|markdown|safe }}
 
     {% for p in posts %}
       <article>
         <h1><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h1>
-{{ p.body|sanitized_markdown|safe }}
+{{ p.body|markdown|safe }}
       </article>
     {% endfor %}
 

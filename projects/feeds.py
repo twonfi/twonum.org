@@ -3,7 +3,7 @@ from django.utils.feedgenerator import Rss201rev2Feed, Atom1Feed
 from minify_html import minify
 
 from .models import Project
-from core.templatetags.markdown_extras import sanitized_markdown
+from core.templatetags.markdown_extras import markdown
 
 
 # noinspection PyMethodMayBeStatic
@@ -19,7 +19,7 @@ class ProjectsFeed(Feed):
         return item.name
 
     def item_description(self, item):
-        return minify(sanitized_markdown(item.desc))
+        return minify(markdown(item.desc))
 
     def item_author_name(self, item):
         return item.author

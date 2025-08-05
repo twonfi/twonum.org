@@ -12,7 +12,7 @@ register = template.Library()
 
 
 @register.filter
-def sanitized_markdown(text):
+def markdown(text):
     return md(
         # clean(text),
         text,
