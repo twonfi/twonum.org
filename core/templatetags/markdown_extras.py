@@ -14,7 +14,8 @@ register = template.Library()
 @register.filter
 def sanitized_markdown(text):
     return md(
-        clean(text),
+        # clean(text),
+        text,
         extensions=[
             "markdown.extensions.fenced_code",
             "markdown.extensions.tables",
