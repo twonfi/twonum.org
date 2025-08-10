@@ -199,7 +199,7 @@ CORS_ALLOWED_ORIGINS = [
 # HTTPS stuff
 if not DEBUG:
     CSRF_COOKIE_SECURE = SESSION_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True  # Issues with the Nest server?
+    # SECURE_SSL_REDIRECT = True  # Issues with the Nest server?
 
 
 # Internationalization
