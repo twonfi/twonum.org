@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 
+from django.conf.global_settings import SESSION_COOKIE_SECURE
 from django.contrib.messages import constants as messages
 from django.urls import reverse
 from environ import Env
@@ -193,6 +194,12 @@ CORS_ALLOWED_ORIGINS = [
 #         "report-uri": "/csp-report/",
 #     },
 # }
+
+
+# HTTPS stuff
+if not DEBUG:
+    CSRF_COOKIE_SECURE = SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True  # Issues with the Nest server?
 
 
 # Internationalization
