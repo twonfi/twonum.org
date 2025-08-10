@@ -27,6 +27,7 @@ def home(request):
         "posts": page_obj,
         "elided": elided_page_range,
         "categories": Category.objects.all(),
+        "pagination": paginator,
     }
 
     return render(request, "doublefloat/home.html", context)
@@ -46,6 +47,7 @@ def category(request, slug):
         "cat": cat,
         "posts": page_obj,
         "elided": elided_page_range,
+        "pagination": paginator,
     }
 
     return render(request, "doublefloat/category.html", context)

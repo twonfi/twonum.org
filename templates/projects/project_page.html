@@ -2,6 +2,10 @@
 {% load django_bootstrap5 %}
 {% load markdown_extras %}
 
+{% block head %}
+  <link rel="canonical" href="https://{{ request.site.domain }}{{ p.get_absolute_url }}">
+{% endblock head %}
+
 {% block pre_h1 %}
   <img class="img-fluid mx-auto d-block" src="{{ p.banner.url }}" alt>
 {% endblock %}

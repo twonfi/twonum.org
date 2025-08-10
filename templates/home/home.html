@@ -4,6 +4,7 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'home:home' %}">
 {% endblock %}
 
 {% block main %}

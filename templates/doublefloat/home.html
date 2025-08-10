@@ -4,6 +4,7 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/doublefloat.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'doublefloat:home' %}">
 {% endblock %}
 
 {% block main %}

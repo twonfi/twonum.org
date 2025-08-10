@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load markdown_extras %}
 
+{% block head %}
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'projects:home' %}">
+{% endblock head %}
+
 {% block main %}
   <ul class="icon-group">
     <li><a href="{% url 'projects:rss_feed' %}" aria-label="RSS"><i class="fa fa-rss" title="RSS"></i></a></li>

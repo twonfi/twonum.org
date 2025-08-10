@@ -4,6 +4,7 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{{ time_machine.get_absolute_url }}">
 {% endblock head %}
 
 {% block main %}

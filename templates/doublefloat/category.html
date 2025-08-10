@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load markdown_extras %}
 
+{% block head %}
+  <link rel="canonical" href="https://{{ request.site.domain }}{{ cat.get_absolute_url }}">
+  {% if not pagination.count %}
+    <meta name="robots" content="noindex">
+  {% endif %}
+{% endblock head %}
+
 {% block main %}
   <hgroup>
     <h1>{{ cat.title }}</h1>
@@ -9,12 +16,12 @@
 
 {{ cat.desc|markdown|safe }}
 
-    {% for p in posts %}
-      <article>
-        <h1><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h1>
+  {% for p in posts %}
+    <article>
+      <h1><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h1>
 {{ p.body|markdown|safe }}
-      </article>
-    {% endfor %}
+    </article>
+  {% endfor %}
 
-    {% include 'core/pagination.html' with pagination=pagination elided=elided %}
+  {% include 'core/pagination.html' with pagination=pagination elided=elided %}
 {% endblock %}
