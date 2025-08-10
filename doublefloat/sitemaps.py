@@ -5,6 +5,8 @@ from .models import Post
 
 # noinspection PyMethodMayBeStatic
 class DoubleFloatSitemap(Sitemap):
+    protocol = "https"
+
     def items(self):
         return Post.objects.filter()
 

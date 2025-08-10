@@ -5,6 +5,8 @@ from .models import Project
 
 # noinspection PyMethodMayBeStatic
 class ProjectsSitemap(Sitemap):
+    protocol = "https"
+
     def items(self):
         return Project.objects.filter()
 
