@@ -32,7 +32,7 @@ urlpatterns = [
     path("_martor/", include("martor.urls")),
     # Sitemaps
     path('sitemap.xml', index, {'sitemaps': sitemaps}),
-    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml/<section>.xml', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
     # twonum.org
     path("doublefloat/", include("doublefloat.urls")),
