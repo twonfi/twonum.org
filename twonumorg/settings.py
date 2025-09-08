@@ -25,8 +25,6 @@ env = Env(
     EMAIL_SMTP_SSL_CERTFILE=(str, None),
     EMAIL_SMTP_SSL_KEYFILE=(str, None),
     EMAIL_SMTP_TIMEOUT=(int, 3),
-    # allauth
-    PASSKEY=(bool, False),
 )
 Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -249,10 +247,16 @@ NOINDEX = env("NOINDEX")
 
 # allauth
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = True
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
 LOGIN_REDIRECT_URL = "/"
 MFA_SUPPORTED_TYPES = ["totp", "webauthn", "recovery_codes"]
-MFA_PASSKEY_LOGIN_ENABLED = env("PASSKEY")
-MFA_PASSKEY_SIGNUP_ENABLED = env("PASSKEY")
+MFA_PASSKEY_LOGIN_ENABLED = True
+MFA_PASSKEY_SIGNUP_ENABLED = True
+
+if DEBUG:
+    MFA_WEBAUTHN_ALLOW_INSECURE_ORIGIN = True
 
 # django-crispy-forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
