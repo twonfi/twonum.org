@@ -48,3 +48,6 @@ if settings.DEBUG:
         document_root=settings.MEDIA_ROOT
     )
 
+# Custom error pages
+handler404 = "core.views.error_404"
+handler500 = "core.views.error_500"

@@ -1,0 +1,43 @@
+    After searching everywhere, the adventurers concluded:
+  "This page does not exist."
+                              --The writers
+
+    It's a 404 page. Says right there, page not found.
+  What can you expect?
+                              --twonum
+
+    Website Not Found.
+                              --The school writers
+
+    I blame your (ancient) browser version. Update your browser.
+  Or else.
+                              --Also twonum
+
+    302 Found: https://www.twonum.org/
+                              --The "improve the UX" management
+
+    Connection timed out
+                              --The evil devs
+
+    <!-- padding --><!-- padding --><!-- padding -->
+                              --The devs in the Stone Age
+
+    200 OK: { "ok": false }
+                              --The *actually* evil devs
+
+    The 404 page can be a versatile tool for web developers to
+  provide a user experience improvement by serving a friendly
+  explanation instead of simply a blank page. Many websites use
+  this as an opportunity to market products, while others simply
+  use it as a fun addition.
+                              --twonum as a writer
+
+<> ---------------------------------------------------------- <>
+
+Hope is not lost -- check out twonum.org and hub.twonum.org.
+
+<> ---------------------------------------------------------- <>
+
+© twonum.
+Licensed under the GNU Affero General Public License
+and Creative Commons Attribution-ShareAlike 4.0.
