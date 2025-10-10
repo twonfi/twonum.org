@@ -25,5 +25,7 @@ GitHub: <https://github.com/twonfi/twonum.org>.
 <> ---------------------------------------------------------- <>
 
 © twonum.
-Licensed under the GNU Affero General Public License
-and Creative Commons Attribution-ShareAlike 4.0.
+Licensed under the GNU Affero General Public License, version 3
+and Creative Commons Attribution-ShareAlike 4.0 International.
+There is absolutely no warranty.
+Source code: <https://github.com/twonfi/twonum.org>
