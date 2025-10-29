@@ -1,0 +1,22 @@
+<https://twonum.org/_hsts> is used to ensure the HTTP Strict
+Transport Security (HSTS) policy is loaded for twonum.org and
+all subdomains.
+
+Due to the proxy system of www.twonum.org's host (Nest), an
+HTTP to HTTPS redirect is not possible.  This URL is used for a
+reasonably lightweight automatic HTTPS redirection method.
+Although twonum.org is included in the HSTS preload list, older
+user agents may not use an updated version of it.
+
+Requests to this URL returns 204 (No Content) and is cached for
+one year (the max-age of the HSTS policy).  If the HSTS preload
+list for your browser includes twonum.org, you are welcome to
+block it in your browser.
+
+<> ---------------------------------------------------------- <>
+
+© twonum.
+Licensed under the GNU Affero General Public License, version 3
+and Creative Commons Attribution-ShareAlike 4.0 International.
+There is absolutely no warranty.
+Source code: <https://github.com/twonfi/twonum.org>
