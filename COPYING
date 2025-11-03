@@ -1,12 +1,17 @@
                     twonum.org COPYRIGHT NOTICE
-                       Version 1, 1 August 2025
+                     Version 2, 3 November 2025
 
   The twonum.org system is split across the content, stored in the
 website's database ("Content") and code run on the
 client or server software ("Code").
 
-  Code is licensed under the GNU Affero General Public License, version 3;
-see COPYING.CODE.
+  Code is licensed under the GNU Affero General Public License, version
+3 (GNU AGPL); see COPYING.CODE.
 
   Content is licensed under the Creative Commons Attribution-ShareAlike
-License, version 4.0, unless otherwise noted; see COPYING.CONTENT.
+License, version 4.0, unless otherwise noted (CC); see COPYING.CONTENT.
+Files in the repository stated as being licensed under the Creative
+Commons license is under both it and the GNU AGPL.
+
+  This software includes works licensed under the GNU General Public
+License, version 3 (GNU GPL); see COPYING.GPLv3.
