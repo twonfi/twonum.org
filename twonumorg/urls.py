@@ -2,8 +2,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.sites.shortcuts import get_current_site
-from django.db.utils import OperationalError
 from django.views.i18n import JavaScriptCatalog
 from django.contrib.sitemaps.views import index, sitemap
 from allauth.account.decorators import secure_admin_login
