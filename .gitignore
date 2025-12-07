@@ -120,3 +120,4 @@ dmypy.json
 cython_debug/
 
 /media/
+/staticroot/

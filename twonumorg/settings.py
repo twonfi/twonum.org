@@ -92,6 +92,9 @@ INSTALLED_APPS += env("INSTALLED_APPS")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # WhiteNoise always goes first
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # Other Django built-in middleware
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -100,7 +103,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     # From packages
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django_minify_html.middleware.MinifyHtmlMiddleware",
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
@@ -221,6 +223,7 @@ USE_TZ = True
 
 if DEBUG:
     STATIC_URL = "static/"
+    STATIC_ROOT = BASE_DIR / "staticroot"
 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
@@ -231,8 +234,14 @@ else:
     MEDIA_URL = env("MEDIA_URL")
     MEDIA_ROOT = _env_file("MEDIA_ROOT")
 
-    STATICFILES_STORAGE = ('whitenoise.'
-                           'storage.CompressedManifestStaticFilesStorage')
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
