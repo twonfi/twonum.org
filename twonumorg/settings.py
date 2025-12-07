@@ -243,6 +243,8 @@ STORAGES = {
     },
 }
 
+WHITENOISE_MANIFEST_STRICT = False
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
