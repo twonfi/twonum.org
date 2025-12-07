@@ -26,3 +26,4 @@ django-cors-headers~=4.7.0
 django-csp~=4.0
 django-avatar~=8.0.1
 django-minify-html~=1.14.0
+whitenoise~=6.11.0

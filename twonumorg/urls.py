@@ -40,11 +40,11 @@ urlpatterns = [
 ]
 
 # Handle media files in development
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
+# if settings.DEBUG:
+#     urlpatterns += static(
+#         settings.MEDIA_URL,
+#         document_root=settings.MEDIA_ROOT
+#     )
 
 # Custom error pages
 handler404 = "core.views.error_404"

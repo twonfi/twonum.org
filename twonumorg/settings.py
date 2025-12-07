@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django.contrib.sitemaps",
     # Single-line stuff
+    "whitenoise.runserver_nostatic",
     "tz_detect",
     "django_bootstrap5",
     "rest_framework",
@@ -99,6 +100,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     # From packages
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django_minify_html.middleware.MinifyHtmlMiddleware",
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
