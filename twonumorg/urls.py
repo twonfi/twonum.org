@@ -6,6 +6,7 @@ from django.views.i18n import JavaScriptCatalog
 from django.contrib.sitemaps.views import index, sitemap
 from allauth.account.decorators import secure_admin_login
 
+import core.views
 from doublefloat.sitemaps import DoubleFloatSitemap
 from projects.sitemaps import ProjectsSitemap
 
@@ -32,6 +33,8 @@ urlpatterns = [
     path('sitemap.xml', index, {'sitemaps': sitemaps}),
     path('sitemap.xml/<section>.xml', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
+    # Misc controls
+    path("robots.txt", core.views.robots_txt),
     # twonum.org
     path("doublefloat/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),

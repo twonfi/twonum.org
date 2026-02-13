@@ -1,9 +1,17 @@
 from django.shortcuts import render
 # from django.urls import reverse
 
+from twonumorg import BLOCKED_USER_AGENTS
+
 
 def robots_txt(request):
-    ...
+    context = {
+        "user_agents": BLOCKED_USER_AGENTS,
+    }
+
+    resp = render(request, "robots.txt", context)
+    resp["Content-Type"] = "text/plain; charset=utf-8"
+    return resp
 
 
 # noinspection PyUnusedLocal

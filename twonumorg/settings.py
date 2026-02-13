@@ -91,6 +91,8 @@ INSTALLED_APPS = [
 INSTALLED_APPS += env("INSTALLED_APPS")
 
 MIDDLEWARE = [
+    # Get the bots out first. The responses are pretty trivial.
+    "twonumorg.middleware.BlockUserAgentsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     # WhiteNoise always goes first
     "whitenoise.middleware.WhiteNoiseMiddleware",
