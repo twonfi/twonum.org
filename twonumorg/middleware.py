@@ -14,12 +14,12 @@ class BlockUserAgentsMiddleware:
     """
 
     HTTP_RESPONSE_TEXT = r"""403: Forbidden.
-                       ______
-                      /      \
-                      | SLOP |
-                      \______/
-                         ||
-                         ||>-(twonum)
+       ______
+      /      \
+      | SLOP |
+      \______/
+         ||
+         ||>-(twonum)
 
 <> ---------------------------------------------------------- <>
 
@@ -54,6 +54,8 @@ There is absolutely no warranty.
             and any(ua.lower() in user_agent for ua in BLOCKED_USER_AGENTS)
             and not self.ALLOWED_PATH_REGEX.search(request.path)
         ):
-            return HttpResponse(self.HTTP_RESPONSE_TEXT, status=400)
+            resp = HttpResponse(self.HTTP_RESPONSE_TEXT, status=400)
+            resp["Content-Type"] = "text/plain; charset=utf-8"
+            return resp
 
         return self.get_response(request)
