@@ -54,7 +54,7 @@ There is absolutely no warranty.
             and any(ua.lower() in user_agent for ua in BLOCKED_USER_AGENTS)
             and not self.ALLOWED_PATH_REGEX.search(request.path)
         ):
-            resp = HttpResponse(self.HTTP_RESPONSE_TEXT, status=400)
+            resp = HttpResponse(self.HTTP_RESPONSE_TEXT, status=403)
             resp["Content-Type"] = "text/plain; charset=utf-8"
             return resp
 
