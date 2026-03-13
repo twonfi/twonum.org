@@ -110,7 +110,6 @@ MIDDLEWARE = [
     "django_minify_html.middleware.MinifyHtmlMiddleware",
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "csp.middleware.CSPMiddleware",
 ]
