@@ -16,6 +16,7 @@ env = Env(
     SITE_ID=(int, 1),
     INSTALLED_APPS=(list, []),
     NOINDEX=(bool, True),
+    SERVER=(str, ""),
     # Email
     EMAIL_SMTP_HOST=(str, ""),
     EMAIL_SMTP_PORT=(int, 25),
@@ -258,6 +259,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Sites framework
 SITE_ID = env("SITE_ID")
+
+# Server ID (used for core.views.ping)
+SERVER = env("SERVER")
 
 # NOINDEX
 NOINDEX = env("NOINDEX")
