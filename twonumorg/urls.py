@@ -35,6 +35,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     # Misc controls
     path("robots.txt", core.views.robots_txt),
+    path("ping/", core.views.ping),
     # twonum.org
     path("doublefloat/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),

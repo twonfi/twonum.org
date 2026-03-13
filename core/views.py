@@ -1,4 +1,9 @@
+from json import dumps
+from datetime import datetime
+
 from django.shortcuts import render
+from django.conf import settings
+from django.http import JsonResponse
 # from django.urls import reverse
 
 from twonumorg import BLOCKED_USER_AGENTS
@@ -21,9 +26,20 @@ def error_404(request, exception):
     resp["The-Truly-Evil-Devs"] = "Status: 404"
     return resp
 
+
 # noinspection PyUnusedLocal
 def error_500(request):
     resp = render(request, "core/errors/500.txt", status=500)
     resp["Content-Type"] = "text/plain; charset=utf-8"
     resp["The-Truly-Evil-Devs"] = "Status: 500"
     return resp
+
+
+# noinspection PyUnusedLocal
+def ping(request):
+    data = {
+        "date": datetime.now().isoformat(),
+        "server": settings.SERVER
+    }
+
+    return JsonResponse(data)
