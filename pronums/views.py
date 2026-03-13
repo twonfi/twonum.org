@@ -34,4 +34,3 @@ def year_view(request, year):
 
     return render(request, 'pronums/year.html', context)
 
-    return render(request, 'base.html')
