@@ -1,0 +1,8 @@
+blockquote pre {
+  font-family: Outfit, sans-serif;
+}
+
+li:target {
+  color: #ff9f40;
+  font-weight: bold;
+}

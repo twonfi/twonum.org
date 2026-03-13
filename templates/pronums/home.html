@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/pronums.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'pronums:home' %}">
+{% endblock head %}
+
+{% block main %}
+  <p>A pronum is simple, random thought. They're short, unlike <a href="{% url 'doublefloat:home' %}">DoubleFloat</a> posts.</p>
+
+  <hr>
+
+  <h2>Pronums by year</h2>
+  <ul>
+    {% for year in years %}
+      <li><a href="{% url 'pronums:year' year=year %}">{{ year }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  <h2>Pronums of {% now 'Y' %}</h2>
+  {% include 'pronums/components/pronums_list.html' with pronums=pronums %}
+{% endblock %}

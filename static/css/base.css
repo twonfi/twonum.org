@@ -100,3 +100,8 @@ section:not(.card), article:not(.card) {
     }
   }
 }
+
+blockquote {
+  border-left: 3px #7f849c solid;
+  padding-left: 1em;
+}

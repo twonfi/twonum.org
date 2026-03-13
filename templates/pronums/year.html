@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/pronums.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'pronums:home' %}">
+{% endblock head %}
+
+{% block main %}
+  {% include 'pronums/components/pronums_list.html' with pronums=pronums %}
+{% endblock %}

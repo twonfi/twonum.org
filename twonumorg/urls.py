@@ -40,6 +40,7 @@ urlpatterns = [
     path("doublefloat/", include("doublefloat.urls")),
     path("projects/", include("projects.urls")),
     path("about/", include("about.urls")),
+    path("pronums/", include("pronums.urls")),
     path("", include("home.urls")),
 ]
 
