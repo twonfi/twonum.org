@@ -43,4 +43,4 @@ class Pronum(models.Model):
     def get_absolute_url(self):
         return reverse("pronums:year", kwargs={
             "year": self.date.year,
-        })
+        }) + f"#pronum-{self.id}"
