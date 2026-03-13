@@ -1,0 +1,48 @@
+[project]
+name = "twonumorg"
+version = "1.0.0"
+requires-python = ">=3.14"
+dependencies = [
+    "Django[argon2]~=5.2.7",
+    "psycopg~=3.3.3",
+    "django-allauth[socialaccount,mfa]~=65.15.0",
+    "django-allauth-ui~=1.8.1",
+    "fido2~=2.1.1",
+    "django-widget-tweaks~=1.5.0",
+    "slippers~=0.6.2",
+    "Markdown~=3.10.2",
+    "Pygments~=2.19.1",
+    "nh3~=0.3.3",
+    "django-crispy-forms~=2.4",
+    "crispy-bootstrap5~=2026.3",
+    "django-environ~=0.13.0",
+    "django-tz-detect~=0.5.0",
+    "martor~=1.7.16",
+    "pillow~=12.1.1",
+    "django-bootstrap5~=26.2",
+    "whitenoise[brotli]~=6.12.0",
+    "gunicorn~=25.1.0",
+    "uvicorn~=0.41.0",
+    "django-cleanup~=9.0.0",
+    "strip-markdown~=1.3",
+    "django-comments-xtd~=2.10.6",
+    "djangorestframework~=3.16.1",
+    "django-cors-headers~=4.9.0",
+    "django-csp~=4.0",
+    "django-avatar~=9.0.0",
+    "django-minify-html~=1.14.0",
+]
+authors = [
+  {name = "twonum", email = "two@twonum.org"},
+]
+maintainers = [
+  {name = "twonum", email = "two@twonum.org"}
+]
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+license-files = [
+    "COPYING",
+    "COPYING.CODE",
+    "COPYING.CONTENT",
+    "COPYING.GPLv3",
+]
