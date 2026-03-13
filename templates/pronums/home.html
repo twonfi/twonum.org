@@ -4,6 +4,7 @@
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/pronums.css' %}">
   <link rel="canonical" href="https://{{ request.site.domain }}{% url 'pronums:home' %}">
+  <script src="{% static 'js/pronums/mark-unread.js' %}"></script>
 {% endblock head %}
 
 {% block main %}

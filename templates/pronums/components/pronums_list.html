@@ -1,6 +1,6 @@
 <ul>
   {% for pronum in pronums %}
-  <li id="pronum-{{ pronum.id }}">
+  <li id="pronum-{{ pronum.id }}" class="pronum">
     {# A custom date format is used as <time> only accepts three-digit decimals #}
     <b><time datetime="{{ pronum.date|date:'Y-m-d\\TH:i:sO' }}">{{ pronum.date }}</time>:</b>
     {{ pronum.get_formatted_html|safe }}

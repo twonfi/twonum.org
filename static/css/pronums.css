@@ -2,7 +2,15 @@ blockquote pre {
   font-family: Outfit, sans-serif;
 }
 
-li:target {
+li.pronum {
+  color: white;
+}
+
+li.pronum.new-pronum {
+  color: #a6e3a1;
+}
+
+li.pronum:target {
   color: #ff9f40;
   font-weight: bold;
 }
