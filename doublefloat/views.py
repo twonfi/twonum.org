@@ -1,8 +1,10 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, get_object_or_404
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.paginator import Paginator
 
-from .models import Post, Category
+from doublefloat.models import Post, Category
+from projects.models import Project
 
 
 def view_post(request, slug: str):
@@ -41,6 +43,11 @@ def category(request, slug):
     page_obj = paginator.get_page(request.GET.get("page"))
     elided_page_range = paginator.get_elided_page_range(page_obj.number)
 
+    try:
+        project = Project.objects.get(doublefloat_category=cat)
+    except ObjectDoesNotExist:
+        project = None
+
     context = {
         "title": f"{cat.title} on DoubleFloat",
         "h1_from_title": False,
@@ -48,6 +55,7 @@ def category(request, slug):
         "posts": page_obj,
         "elided": elided_page_range,
         "pagination": paginator,
+        "project": project,
     }
 
     return render(request, "doublefloat/category.html", context)

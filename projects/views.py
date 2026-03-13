@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import Project
+from projects.models import Project
 
 
 def home(request):
@@ -19,6 +19,7 @@ def project_page(request, project_id):
     context = {
         "title": project.name,
         "p": project,
+        "doublefloat_category": project.doublefloat_category,
     }
 
     return render(request, "projects/project_page.html", context)

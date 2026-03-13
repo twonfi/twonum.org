@@ -14,8 +14,12 @@
     <p>Posts on DoubleFloat</p>
   </hgroup>
 
-{{ cat.desc|markdown|safe }}
+  {% if project %}
+    <p><a href="{{ project.get_absolute_url }}">Project page</a></p>
+  {% endif %}
 
+{{ cat.desc|markdown|safe }}
+  
   {% for p in posts %}
     <article>
       <h1><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h1>

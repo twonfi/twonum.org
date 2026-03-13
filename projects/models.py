@@ -3,6 +3,8 @@ from django.conf import settings
 from django.urls import reverse
 from martor.models import MartorField
 
+from doublefloat.models import Category as DoubleFloatCategory
+
 User = settings.AUTH_USER_MODEL
 
 
@@ -15,6 +17,13 @@ class Project(models.Model):
 
     demo_url = models.URLField("Demo URL")
     repo_url = models.URLField("Repository URL")
+
+    doublefloat_category = models.OneToOneField(
+        DoubleFloatCategory,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
 
     allow_comments = models.BooleanField(default=True)
 

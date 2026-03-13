@@ -11,7 +11,13 @@
 {% endblock %}
 
 {% block main %}
-  <p id="page-info">A project by <b>{{ p.author }}</b></p>
+  <p id="page-info">
+    A project by <b>{{ p.author }}</b>
+    {% if doublefloat_category %}
+      <br>
+      <a href="{{ doublefloat_category.get_absolute_url }}">DoubleFloat category</a>
+    {% endif %}
+  </p>
   <div class="text-center btnset">
     {% bootstrap_button 'Try it' button_type='link' href=p.demo_url %}
     {% bootstrap_button 'Source code' button_type='link' href=p.repo_url button_class='btn-secondary' %}
