@@ -3,7 +3,7 @@ name = "twonumorg"
 version = "1.0.0"
 requires-python = ">=3.14"
 dependencies = [
-    "Django[argon2]~=5.2.7",
+    "Django[argon2]~=6.0.3",
     "psycopg~=3.3.3",
     "django-allauth[socialaccount,mfa]~=65.15.0",
     "django-allauth-ui~=1.8.1",
