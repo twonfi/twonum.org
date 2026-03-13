@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     "martor",
     "avatar",
     # allauth
-    "allauth_ui",
+    # "allauth_ui",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
