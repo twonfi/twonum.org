@@ -15,6 +15,9 @@ Unlike my original static site idea, I decided to use Django with Python for thi
 Code contributions are absolutely welcome! But not content contributions (as they are hosted on a Django database).
 
 ## License
-See `COPYING`.
+twonum.org uses <abbr title="Affero General Purpose License version 3">AGPLv3</abbr>
+and <abbr title="Creative Commons Attribution-ShareAlike 4.0 International">CC BY-SA 4.0</abbr>.
+See [COPYING](./COPYING) for how these licenses are applied.
+
 The reason for AGPLv3 is that twonum.org is my personal website, which is much more different than, say,
 [ClubFeed](//github.com/twonfi/clubfeed), a general-purpose application.
