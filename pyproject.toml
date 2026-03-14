@@ -31,6 +31,10 @@ dependencies = [
     "django-csp~=4.0",
     "django-avatar~=9.0.0",
     "django-minify-html~=1.14.0",
+    "djangorestframework~=3.16.1",
+    "djangorestframework-stubs>=3.16.8",
+    "django-filter>=25.2",
+    "drf-spectacular[sidecar]>=0.29.0",  # sidecar to self-host as much as possible
 ]
 authors = [
   {name = "twonum", email = "two@twonum.org"},

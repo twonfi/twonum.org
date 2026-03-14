@@ -1,8 +1,9 @@
 from datetime import date
 
 from django.shortcuts import render
+from rest_framework import viewsets, permissions
 
-from pronums import models
+from pronums import models, serializers, filters
 
 
 def home(request):
@@ -34,3 +35,9 @@ def year_view(request, year):
 
     return render(request, 'pronums/year.html', context)
 
+
+class PronumViewSet(viewsets.ModelViewSet):
+    queryset = models.Pronum.objects.all()
+    serializer_class = serializers.PronumSerializer
+    permission_classes = [permissions.DjangoModelPermissionsOrAnonReadOnly]
+    filterset_class = filters.PronumFilter

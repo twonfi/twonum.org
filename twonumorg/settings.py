@@ -62,9 +62,13 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "tz_detect",
     "django_bootstrap5",
-    "rest_framework",
+    "django_filters",
     "martor",
     "avatar",
+    # DRF
+    "rest_framework",
+    "drf_spectacular",
+    "drf_spectacular_sidecar",
     # allauth
     # "allauth_ui",
     "allauth",
@@ -299,6 +303,34 @@ MESSAGE_TAGS = {
     messages.SUCCESS: "alert-success",
     messages.WARNING: "alert-warning",
     messages.ERROR: "alert-danger",
+}
+
+# DRF
+REST_FRAMEWORK = {
+    # Versioning
+    "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.URLPathVersioning",
+    "ALLOWED_VERSIONS": ["v1"],
+    "DEFAULT_VERSION": "v1",
+    "VERSION_PARAM": "version",
+    # Filtering
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ],
+    # Schema
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    # Authentication and permissions
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication"
+    ],
+}
+
+# drf-spectacular
+SPECTACULAR_SETTINGS = {
+    "TITLE": "twonum.org API",
+    "VERSION": "1.0.0",
+    "SWAGGER_UI_DIST": "SIDECAR",
+    "SWAGGER_UI_FAVICON_HREF": "",
+    "REDOC_DIST": "SIDECAR",
 }
 
 # martor

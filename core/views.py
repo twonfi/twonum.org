@@ -5,8 +5,13 @@ from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
 # from django.urls import reverse
+from rest_framework import viewsets, permissions
+from django.contrib.auth import get_user_model
 
 from twonumorg import BLOCKED_USER_AGENTS
+from core import serializers
+
+User = get_user_model()
 
 
 def robots_txt(request):
@@ -43,3 +48,9 @@ def ping(request):
     }
 
     return JsonResponse(data)
+
+
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = serializers.UserSerializer
+    permission_classes = [permissions.AllowAny]
