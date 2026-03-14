@@ -41,3 +41,6 @@ class PronumViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.PronumSerializer
     permission_classes = [permissions.DjangoModelPermissionsOrAnonReadOnly]
     filterset_class = filters.PronumFilter
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
