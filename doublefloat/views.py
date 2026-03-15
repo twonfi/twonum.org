@@ -44,7 +44,8 @@ def category(request, slug):
     elided_page_range = paginator.get_elided_page_range(page_obj.number)
 
     try:
-        project = Project.objects.get(doublefloat_category=cat)
+        project = (Project.objects.prefetch_related("doublefloat_category")
+                   .get(doublefloat_category=cat))
     except ObjectDoesNotExist:
         project = None
 
