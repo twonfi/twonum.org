@@ -16,9 +16,19 @@
  */
 const ENCODED_EMAIL_STRING = 'dHdvQHR3b251bS5vcmc=';
 
-// noinspection JSUnusedGlobalSymbols
 function displayEmail() {
-  const email = atob(ENCODED_EMAIL_STRING);
-  console.log(email);
-  alert(email);
+  if (!confirm('Click CANCEL or press Esc to get my email.')) {
+    const email = atob(ENCODED_EMAIL_STRING);
+    console.log(email);
+    document.getElementById('email-output')
+        .innerHTML = `<a href="mailto:${email}">${email}</a>`;
+    document.getElementById('display-email-button').hidden = true;
+  } else {
+    alert('Try again, but > click Cancel < or press Esc this time.');
+  }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('display-email-button')
+      .addEventListener('click', displayEmail);
+});
