@@ -38,14 +38,16 @@ def home(request):
 def category(request, slug):
     cat = get_object_or_404(Category, slug=slug)
 
-    paginator = Paginator(Post.objects.filter(
-        categories=cat).order_by("-date"), 10)
+    paginator = Paginator(
+        Post.objects.filter(categories=cat).order_by("-date"), 10
+    )
     page_obj = paginator.get_page(request.GET.get("page"))
     elided_page_range = paginator.get_elided_page_range(page_obj.number)
 
     try:
-        project = (Project.objects.prefetch_related("doublefloat_category")
-                   .get(doublefloat_category=cat))
+        project = Project.objects.prefetch_related("doublefloat_category").get(
+            doublefloat_category=cat
+        )
     except ObjectDoesNotExist:
         project = None
 

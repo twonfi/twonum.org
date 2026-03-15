@@ -21,6 +21,7 @@ class Project(models.Model):
     doublefloat_category = models.OneToOneField(
         DoubleFloatCategory,
         on_delete=models.SET_NULL,
+        related_name="doublefloat_category",
         blank=True,
         null=True,
     )
@@ -31,5 +32,4 @@ class Project(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('projects:project_page',
-            kwargs={"project_id": self.id})
+        return reverse("projects:project_page", kwargs={"project_id": self.id})

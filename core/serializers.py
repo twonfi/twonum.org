@@ -20,8 +20,7 @@ User = get_user_model()
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(
-        view_name='api:user-detail',
-        lookup_field='pk'
+        view_name="api:user-detail", lookup_field="pk"
     )
 
     class Meta:

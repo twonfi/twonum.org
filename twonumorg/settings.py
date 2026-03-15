@@ -3,9 +3,7 @@ import os
 
 from django.conf.global_settings import SESSION_COOKIE_SECURE
 from django.contrib.messages import constants as messages
-from django.urls import reverse
 from environ import Env
-from csp import constants as csp
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = Env(
@@ -34,7 +32,7 @@ Env.read_env(os.path.join(BASE_DIR, ".env"))
 def _env_file(key: str) -> str:
     env_ = env(key)
 
-    if env_[:2] == './':
+    if env_[:2] == "./":
         return str(BASE_DIR / env_[2:])
     return str(Path(env_))
 
@@ -65,6 +63,7 @@ INSTALLED_APPS = [
     "django_filters",
     "martor",
     "avatar",
+    "graphene_django",
     # DRF
     "rest_framework",
     "drf_spectacular",
@@ -142,13 +141,11 @@ WSGI_APPLICATION = "twonumorg.wsgi.application"
 
 # Email
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-DATABASES = {
-    "default": env.db()
-}
+DATABASES = {"default": env.db()}
 
 
 # Email
@@ -170,7 +167,6 @@ match env("EMAIL_BACKEND"):
         EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     case "dummy":
         EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
-
 
 
 # Password validation
@@ -274,7 +270,7 @@ NOINDEX = env("NOINDEX")
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 ACCOUNT_EMAIL_VERIFICATION = "optional" if DEBUG else "mandatory"
 ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = False if DEBUG else True
-ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
+ACCOUNT_SIGNUP_FIELDS = ["username*", "email*", "password1*", "password2*"]
 LOGIN_REDIRECT_URL = "/"
 MFA_SUPPORTED_TYPES = ["totp", "webauthn", "recovery_codes"]
 MFA_PASSKEY_LOGIN_ENABLED = True if not DEBUG else False
@@ -333,6 +329,9 @@ SPECTACULAR_SETTINGS = {
     "REDOC_DIST": "SIDECAR",
 }
 
+# django-graphene
+GRAPHENE = {"SCHEMA": "twonumorg.schema.schema"}
+
 # martor
 MARTOR_THEME = "bootstrap"
 MARTOR_ENABLE_ADMIN_CSS = False
@@ -352,18 +351,18 @@ MARTOR_TOOLBAR_BUTTONS = [
     "toggle-maximize",
     "help",
 ]
-MARTOR_ALTERNATIVE_JS_FILE_THEME = 'martor/martor.js'
-MARTOR_ALTERNATIVE_CSS_FILE_THEME = 'martor/martor.css'
+MARTOR_ALTERNATIVE_JS_FILE_THEME = "martor/martor.js"
+MARTOR_ALTERNATIVE_CSS_FILE_THEME = "martor/martor.css"
 
 # django-comments-xtd
 COMMENTS_APP = "django_comments_xtd"
 COMMENTS_XTD_MAX_THREAD_LEVEL = 2
 COMMENTS_XTD_APP_MODEL_OPTIONS = {
-    'default': {
-        'allow_flagging': True,
-        'allow_feedback': True,
-        'show_feedback': True,
-        'who_can_post': 'all',
+    "default": {
+        "allow_flagging": True,
+        "allow_feedback": True,
+        "show_feedback": True,
+        "who_can_post": "all",
     },
 }
 COMMENTS_XTD_FROM_EMAIL = env("EMAIL_FROM")

@@ -25,8 +25,7 @@ class Category(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('doublefloat:category',
-            kwargs={"slug": self.slug})
+        return reverse("doublefloat:category", kwargs={"slug": self.slug})
 
 
 class Post(models.Model):
@@ -35,10 +34,12 @@ class Post(models.Model):
     date = models.DateTimeField()
     title = models.CharField(max_length=255, unique=True)
     body = MartorField()
-    favorites = models.ManyToManyField(settings.AUTH_USER_MODEL,
-        related_name="favorites", blank=True)
-    categories = models.ManyToManyField(Category,
-        related_name="category", blank=True)
+    favorites = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="favorites", blank=True
+    )
+    categories = models.ManyToManyField(
+        Category, related_name="category", blank=True
+    )
     allow_comments = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, blank=True)
 
@@ -51,5 +52,4 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('doublefloat:view_post',
-            kwargs={"slug": self.slug})
+        return reverse("doublefloat:view_post", kwargs={"slug": self.slug})

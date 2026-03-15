@@ -1,6 +1,5 @@
 from django import template
 from markdown import markdown as md
-from nh3 import clean
 from strip_markdown import strip_markdown as strip_md
 
 # from pymdownx.emoji import EmojiExtension, gemoji

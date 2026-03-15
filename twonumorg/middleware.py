@@ -47,7 +47,7 @@ There is absolutely no warranty.
         self.get_response = get_response
 
     def __call__(self, request):
-        user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
+        user_agent = request.META.get("HTTP_USER_AGENT", "").lower()
 
         if (
             user_agent

@@ -15,10 +15,12 @@ def home(request):
         "years": models.Pronum.objects.values_list(
             "date__year",
             flat=True,
-        ).distinct().reverse(),
+        )
+        .distinct()
+        .reverse(),
     }
 
-    return render(request, 'pronums/home.html', context)
+    return render(request, "pronums/home.html", context)
 
 
 def year_view(request, year):
@@ -30,10 +32,12 @@ def year_view(request, year):
         "years": models.Pronum.objects.values_list(
             "date__year",
             flat=True,
-        ).distinct().reverse(),
+        )
+        .distinct()
+        .reverse(),
     }
 
-    return render(request, 'pronums/year.html', context)
+    return render(request, "pronums/year.html", context)
 
 
 class PronumViewSet(viewsets.ModelViewSet):

@@ -12,14 +12,15 @@ class Pronum(models.Model):
     Pronums are short thoughts (like tweets) that can be streamed to a
     user and are much simpler than DoubleFloat posts.
     """
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField(
         help_text="This will be placed inside an HTML list item."
-                  " Don't use HTML. Use quote for blockquote format."
+        " Don't use HTML. Use quote for blockquote format."
     )
     quote = models.BooleanField(
         verbose_name="Show as quote",
-        help_text="Whether to show this pronum as a blockquote"
+        help_text="Whether to show this pronum as a blockquote",
     )
     date = models.DateTimeField(auto_now_add=True)
 
@@ -39,8 +40,13 @@ class Pronum(models.Model):
         else:
             return text
 
-
     def get_absolute_url(self):
-        return reverse("pronums:year", kwargs={
-            "year": self.date.year,
-        }) + f"#pronum-{self.id}"
+        return (
+            reverse(
+                "pronums:year",
+                kwargs={
+                    "year": self.date.year,
+                },
+            )
+            + f"#pronum-{self.id}"
+        )

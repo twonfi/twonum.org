@@ -14,10 +14,11 @@
 #  along with twonum.org.  If not, see <https://www.gnu.org/licenses/>.
 from django.urls import path, re_path, include
 from rest_framework.routers import DefaultRouter
-from drf_spectacular.views import (SpectacularAPIView,
-                                   SpectacularSwaggerView,
-                                   SpectacularRedocView
-                                   )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
 
 from pronums.views import PronumViewSet
 import core.views
@@ -31,12 +32,14 @@ rest_router.register("users", core.views.UserViewSet, basename="user")
 urlpatterns = [
     re_path(r"^(?P<version>(v\d+))/", include(rest_router.urls)),
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
-    path("schema/swagger-ui/",
+    path(
+        "schema/swagger-ui/",
         SpectacularSwaggerView.as_view(url_name="api:schema"),
-        name="swagger-ui"
+        name="swagger-ui",
     ),
-    path("schema/redoc/",
+    path(
+        "schema/redoc/",
         SpectacularRedocView.as_view(url_name="api:schema"),
-        name="redoc"
+        name="redoc",
     ),
 ]

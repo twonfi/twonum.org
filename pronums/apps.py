@@ -2,6 +2,6 @@ from django.apps import AppConfig
 
 
 class PronumsConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'pronums'
-    verbose_name = 'Pronums'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "pronums"
+    verbose_name = "Pronums"

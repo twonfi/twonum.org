@@ -1,9 +1,9 @@
-from json import dumps
 from datetime import datetime
 
 from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
+
 # from django.urls import reverse
 from rest_framework import viewsets, permissions
 from django.contrib.auth import get_user_model
@@ -42,10 +42,7 @@ def error_500(request):
 
 # noinspection PyUnusedLocal
 def ping(request):
-    data = {
-        "date": datetime.now().isoformat(),
-        "server": settings.SERVER
-    }
+    data = {"date": datetime.now().isoformat(), "server": settings.SERVER}
 
     return JsonResponse(data)
 
