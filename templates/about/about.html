@@ -5,6 +5,7 @@
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/about.css' %}">
   <link rel="canonical" href="https://{{ request.site.domain }}{{ time_machine.get_absolute_url }}">
+  <script src="{% static 'js/about/email.js' %}"></script>
 {% endblock head %}
 
 {% block main %}
@@ -39,16 +40,50 @@
     <p>If you want to contact me on a platform, see my <a href="https://hub.twonum.org">link hub</a>.</p>
 
     <h3>Email</h3>
+    <p>I love getting emails from folks! (I wish my inbox was as wonderful as my feeds.)</p>
+
     <h4>Policy</h4>
     <p>In short, <b>don't spam me</b>. My <em>voicemail</em> is scam-filled already, so don't make it worse.
-    <p>Try not to solicit me (unless I vaguely "trust" you, or you're from Hack Club).</p>
+    <p>In particular:</p>
+    <ul>
+      <li>Should go without saying: <strong>Do not solicit/spam me.</strong>
+        I'll probably block you (on community lists).</li>
+      <li>
+        twonum.org is my <em>personal</em> website.
+        It would be meaningless if it was filled with others' posts on DoubleFloat, so I do not accept guest posts.
+      </li>
+      <li>
+        Don't promote your job offering/personal beliefs. My current arrangements are good enough.
+        (Sharing interesting stuff is okay; don't convert me/try to hire me).
+      </li>
+      <li>git@twonum.org is only used for Git commits. Don't use it for comms.</li>
+      <li>If I gave express permission before, it overrides this policy, but remember that they're revocable.</li>
+      <li>
+        Use the DANE <code>OPENPGPKEY</code> record or Web Key Directory to receive my OpenPGP key.
+        (Encrypting with my key lessens spam chances; no bots use PGP!)
+      </li>
+      <li>All emails are read in plain text
+        (<a href="https://useplaintext.email/#why-plaintext">HTML email is known to be bad</a>).
+        Don't use fancy HTML. <a href="https://useplaintext.email/">Use plain text email</a> if possible
+        (on Thunderbird, it's just <kbd><kbd>Shift</kbd> + <kbd>New Message</kbd></kbd>),
+        otherwise don't format your HTML.</li>
+    </ul>
 
-    <h4>My (encoded) email address</h4>
-    <p>
-      My email address is encoded in
-      <a href="https://emn178.github.io/online-tools/base32_decode.html">UTF-8 Base32</a>:
-      <code>IJ4SAZDFMNXWI2LOM4QHI2DJOMQGCZ3BNFXCYIDZN52SAYLHOJSWKIDUN4QGQ5DUOBZTULZPOMXHI53PNZ2W2LTPOJTS6ZLNMFUWYORAJ5JDGVZWKFCFKTZVLBLTINKMJZDFUWCYIVNFSPI=</code>
-    </p>
+    <p>After reading my policy: <b>Why do you want my email?</b></p>
+    <details><summary>I want to sell you something</summary>
+      <p><b>Don't.</b></p>
+      <p>I will block you.</p>
+    </details>
+    <details>
+      <summary>I want to change your personal beliefs or hire me, not just share interesting stuff</summary>
+      <p><b>My inbox is not a soapbox.</b></p>
+      <p>I will delete your email. Repeat offenders will get blocked.</p>
+    </details>
+    <details><summary>I want to share something interesting/ask about something else/just say hi</summary>
+      <p><b>You absolutely can email me</b>, fellow stranger!</p>
+      <p>Call <code>displayEmail()</code> in your browser's developer tools' console
+        (<kbd>F12</kbd>) to show my email address.</p>
+    </details>
 
     <h2>Guestbook</h2>
     <p>
