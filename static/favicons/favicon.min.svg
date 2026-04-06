@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+Celeste's profile picture is (C) 2026 twonum / Celeste <https://www.twonum.org/>.
+This image (both its SVG XML code and the rendered output) is licensed under the
+Creative Commons Attribution-ShareAlike 4.0 International license (CC BY-SA).
+
+Attribution: "twonum.org"
+Using "twonum" or "Celeste" is allowed in addition to (not replacing) twonum.org.
+
+However, you are allowed to use this image inside of another work
+without licensing it under CC BY-SA if it meets ALL of the following:
+  - The entire work is used, unmodified, or the only modifications are one of:
+    - Circular border
+    - Border radius/rounding
+    - Resizing while preserving aspect ratio
+      - This refers to resizing/rendering the image to make it have a
+        higher/lower resolution, NOT cropping or distorting it in any way.
+      - The image MUST NOT be resized to a resolution lower than
+        32x32, or rendered to a resolution lower than 32x32.
+    - Modifying the SVG code to make it compatible with viewers but
+      keeping the image identical
+      - This includes shadows and Celeste's eyes.
+    - Minimization of the XML
+      - A comment to twonum.org should be left.
+  - An attribution to "twonum.org" is provided.
+  - If the image or text in proximity is linked, it must lead directly,
+    using HTTPS, to one of:
+    - https://www.twonum.org/
+    - https://hub.twonum.org/
+  - You are not impersonating twonum/Celeste or disparaging them.
+  - You are not hosting or operating a website claiming to be:
+    (Note: Archival websites which link back to the original source,
+    like web.archive.org, are allowed under this rule.)
+    - twonum.org
+    - DoubleFloat
+    - hub.twonum
+    - Pronums
+  - You are not, nor you do not self-identify,
+    nor do you encourage others to be or self-identify,
+    as any one of the following:
+    (Don't even think about a positive relationship with me if you are one of these.
+    You might as well f**k off about this image entirely.)
+    - TERF, SWERF, "gender critical"
+    - misogynist
+    - incel, pick-up artist
+    - manosphere member
+    - nazi, or anything with "nazi" in it
+    - "white supremacist," "fascist," "alt-right"
+    - transphobe
+    - homophobe
+    - anti-LGBTQ+
+  - You MUST NOT use the work for any form of AI training
+    or as input to any AI system.
+
+("The work" refers to this image, Celeste's profile picture.)
+
+Otherwise, you MUST also license your derivative work under CC BY-SA.
+
+An original, non-minimized version of this image
+is available at <https://www.twonum.org/static/favicons/favicon.svg>.
+--><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs><linearGradient id="b" x1="50%" x2="75%" y1="100%" y2="0%"><stop offset="0%" stop-color="#190226"/><stop offset="80%" stop-color="#30103f"/><stop offset="100%" stop-color="#381746"/></linearGradient><linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#9beff0"/><stop offset="60%" stop-color="#af9dcb"/><stop offset="100%" stop-color="#9c7fbd"/></linearGradient><linearGradient id="d" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#bb5353"/><stop offset="50%" stop-color="#c9545d"/><stop offset="100%" stop-color="#c15a63"/></linearGradient><linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#080200"/><stop offset="40%" stop-color="#351b41"/><stop offset="100%" stop-color="#351b41"/></linearGradient><linearGradient id="f" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#af9dcb"/><stop offset="55%" stop-color="#b395c9"/><stop offset="100%" stop-color="#e5cbe9"/></linearGradient><clipPath id="a"><circle cx="256" cy="256" r="256"/></clipPath></defs><g clip-path="url(#a)"><path fill="url(#b)" d="M0 0h512v512H0z"/><path fill="url(#c)" d="m81 228 38-23 26-20 15-24 17-25 32-17 47-99 30 57 29 33 29 18 33 100Z" style="filter:drop-shadow(0-5px 20px #595959)"/><path fill="#87b3b7" d="M0 212c38-2 86 35 216-26 79-37 263 20 296 4v322H0Z" style="filter:drop-shadow(0-5px 20px #111)"/><g style="filter:drop-shadow(0-5px 20px #777)"><path fill="url(#d)" d="M246 215c-42 0-104 45-55 143h112c35-47 22-143-57-143m-71 58 5 27 140 51 1-44Z"/><path fill="#f4e1dd" d="M196 260q4-7 9-7h81q10 0 13 6c16 27 8 78 5 88H196c-8-27-15-64 0-87"/><symbol id="g"><ellipse cx="16" cy="26" fill="#0a0400" rx="14" ry="16"/><path fill="url(#e)" d="M5 28c0 8 4 12 11 12s12-5 12-10q1-5-3-2c-6 3-5 4-9 4-5-1-4-1-7-3q-4-4-4-1"/><path fill="url(#f)" d="M12 31c-1 0-3 3-3 4 0 3 2 5 6 5 5 0 8-1 8-5 0-2-2-4-3-4-2 1-6 1-8 0"/><g fill="#fff"><circle cx="22" cy="17" r="5"/><circle cx="17" cy="25" r="2"/></g></symbol><path fill="#e9e9e9" d="M230 288c-12-23-31 2-30 7 0 7 2 13 7 18 4 3 13 5 18 1Z"/><path fill="transparent" stroke="#272012" stroke-linecap="round" stroke-width="3" d="M232 285c-14-20-33 5-32 10"/><use x="203" y="273" href="#g"/><path fill="#e9e9e9" d="M265 288c12-23 31 2 30 7 0 7-2 13-7 18-4 3-13 5-18 1Z"/><path fill="transparent" stroke="#272012" stroke-linecap="round" stroke-width="3" d="M263 285c14-20 33 5 32 10"/><use x="259" y="273" href="#g"/></g><path fill="#feaa61" d="M0 322c26-36 133-59 228-10 185 96 249-32 284-12v212H0Z" style="filter:drop-shadow(0-5px 30px #555)"/></g></svg>

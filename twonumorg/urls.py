@@ -4,6 +4,8 @@ from django.views.i18n import JavaScriptCatalog
 from django.contrib.sitemaps.views import index, sitemap
 from allauth.account.decorators import secure_admin_login
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic.base import RedirectView
+from django.templatetags.static import static
 from graphene_django.views import GraphQLView
 
 import core.views
@@ -43,6 +45,13 @@ urlpatterns = [
     ),
     # Misc controls
     path("robots.txt", core.views.robots_txt),
+    path(
+        "favicon.ico",
+        RedirectView.as_view(
+            url=static("favicons/favicon.ico"),
+            permanent=True
+        )
+    ),
     path("ping/", core.views.ping),
     # twonum.org
     path("doublefloat/", include("doublefloat.urls")),
