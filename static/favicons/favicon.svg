@@ -20,7 +20,7 @@ without licensing it under CC BY-SA if it meets ALL of the following:
     - Modifying the SVG code to make it compatible with viewers but
       keeping the image identical
       - This includes shadows and Celeste's eyes.
-    - Minimization of the XML
+    - Minification of the XML
       - A comment to twonum.org should be left.
   - An attribution to "twonum.org" is provided.
   - If the image or text in proximity is linked, it must lead directly,
@@ -61,7 +61,25 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
 >
+    <metadata>
+        <rdf:RDF
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+        >
+            <cc:Work xmlns:cc="http://creativecommons.org/ns#">
+                <dc:title>twonum.org favicon, based on Celeste</dc:title>
+                <dc:creator>twonum.org</dc:creator>
+                <cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/" />
+            </cc:Work>
+      </rdf:RDF>
+    </metadata>
     <defs>
+        <mask id="circular-mask">
+            <circle
+                cx="256" cy="256" r="256"
+                fill="white"
+            />
+        </mask>
         <linearGradient
             id="purple-sky-gradient"
             x1="50%" y1="100%"
@@ -85,9 +103,9 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             x1="50%" y1="0%"
             x2="50%" y2="100%"
         >
-            <stop offset="0%" stop-color="#bb5353" />
-            <stop offset="50%" stop-color="#c9545d" />
-            <stop offset="100%" stop-color="#c15a63" />
+            <stop offset="0%" stop-color="#f53c48" />
+            <stop offset="35%" stop-color="#c95485" />
+            <stop offset="100%" stop-color="#af9dcb" />
         </linearGradient>
         <linearGradient
             id="celeste-eye-iris-outer-gradient"
@@ -107,14 +125,15 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             <stop offset="55%" stop-color="#b395c9" />
             <stop offset="100%" stop-color="#e5cbe9" />
         </linearGradient>
-        <!-- <filter
+        <filter
             id="mount-celeste-shadow"
             x="-30%" y="-30%" width="160%" height="160%"
         >
             <feDropShadow
                 dx="0" dy="-5"
                 stdDeviation="20"
-                flood-color="#595959"
+                flood-color="white"
+                flood-opacity="50%"
             />
         </filter>
         <filter
@@ -124,7 +143,7 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             <feDropShadow
                 dx="0" dy="-5"
                 stdDeviation="20"
-                flood-color="#777"
+                flood-opacity="40%"
             />
         </filter>
         <filter
@@ -134,7 +153,7 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             <feDropShadow
                 dx="0" dy="-5"
                 stdDeviation="20"
-                flood-color="#111"
+                flood-opacity="50%"
             />
         </filter>
         <filter
@@ -144,29 +163,16 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             <feDropShadow
                 dx="0" dy="-5"
                 stdDeviation="30"
-                flood-color="#555"
+                flood-opacity="50%"
             />
-        </filter> -->
-        <clipPath id='circle'>
-          <circle cx='256' cy='256' r='256' />
-        </clipPath>
+        </filter>
     </defs>
     <style type="text/css">
-        /* g#celeste-avatar */
-        g#celeste-avatar path#mount-celeste {
-            filter: drop-shadow(0px -5px 20px #595959);
-        }
-        g#celeste-avatar path#blue-wave {
-            filter: drop-shadow(0px -5px 20px #111);
-        }
-        g#celeste-avatar path#orange-wave {
-            filter: drop-shadow(0px -5px 30px #555);
-        }
-        g#celeste-avatar g#celeste {
-            filter: drop-shadow(0px -5px 20px #777);
+        filter {
+            color-interpolation-filters: sRGB;
         }
     </style>
-    <g id="celeste-avatar" clip-path='url(#circle)'>
+    <g id="celeste-avatar" mask="url(#circular-mask)">
         <rect
             id="purple-sky"
             x="0" y="0"
@@ -199,17 +205,6 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
             <g id="celeste-eyes">
                 <!-- I know absolutely nothing about eyes, so here I go... -->
                 <symbol id="celeste-eye">
-                    <!-- <path
-                        id="celeste-eye-sclera"
-                        d="M 5 13 C 17 -10 36 15 35 20 C 35 27 33 33 28 38 C 24 41 15 43 10 39 Z"
-                        fill="#e9e9e9"
-                    />
-                    <path
-                        id="celeste-eye-lash"
-                        d="M 3 10 C 17 -10 36 15 35 20"
-                        stroke="#272012" stroke-width="3" stroke-linecap="round"
-                        fill="transparent"
-                    /> -->
                     <ellipse
                         id="celeste-eye-black-part"
                         cx="16" cy="26"
@@ -249,7 +244,7 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
                         id="celeste-eye-right-lash"
                         d="M 232 285 C 218 265 199 290 200 295"
                         stroke="#272012" stroke-width="3" stroke-linecap="round"
-                        fill="transparent"
+                        fill="none"
                     />
                     <use href="#celeste-eye" x="203" y="273" />
                 </g>
@@ -263,7 +258,7 @@ Otherwise, you MUST also license your derivative work under CC BY-SA.
                         id="celeste-eye-left-lash"
                         d="M 263 285 C 277 265 296 290 295 295"
                         stroke="#272012" stroke-width="3" stroke-linecap="round"
-                        fill="transparent"
+                        fill="none"
                     />
                     <use href="#celeste-eye" x="259" y="273" />
                 </g>
