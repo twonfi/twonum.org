@@ -22,6 +22,11 @@ class Pronum(models.Model):
         verbose_name="Show as quote",
         help_text="Whether to show this pronum as a blockquote",
     )
+    link_url = models.URLField(
+        max_length=300, verbose_name="Link URL", null=True, blank=True
+    )
+    link_text = models.CharField(max_length=50, null=True, blank=True)
+
     date = models.DateTimeField(auto_now_add=True)
 
     allow_comments = False
