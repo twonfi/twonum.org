@@ -267,6 +267,7 @@ SERVER = env("SERVER")
 NOINDEX = env("NOINDEX")
 
 # allauth
+ACCOUNT_ADAPTER = "core.adapters.NoSignupAccountAdapter"
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 ACCOUNT_EMAIL_VERIFICATION = "optional" if DEBUG else "mandatory"
 ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = False if DEBUG else True
