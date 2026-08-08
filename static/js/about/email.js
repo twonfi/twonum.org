@@ -14,17 +14,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this twonum.org.  If not, see <https://www.gnu.org/licenses/>.
  */
-const ENCODED_EMAIL_STRING = 'dHdvQHR3b251bS5vcmc=';
+const ENCODED_EMAIL_STRING = 'Y2FkZW5jZUB0d29udW0ub3Jn';
 
 function displayEmail() {
-  if (!confirm('Click CANCEL or press Esc to get my email.')) {
+  if (!confirm(atob('Q2xpY2sgQ0FOQ0VMIG9yIHByZXNzIEVzYyB0byBnZXQgbXkgZW1haWwgYWRkcmVzcy4='))) {
     const email = atob(ENCODED_EMAIL_STRING);
     console.log(email);
     document.getElementById('email-output')
         .innerHTML = `<a href="mailto:${email}">${email}</a>`;
     document.getElementById('display-email-button').hidden = true;
   } else {
-    alert('Try again, but > click Cancel < or press Esc this time.');
+    alert(atob('VHJ5IGFnYWluLCBidXQgKmNsaWNrIENBTkNFTCogb3IgcHJlc3MgRXNjIGluc3RlYWQgb2Ygd2hhdCB5b3UgdXN1YWxseSBkby4='));
   }
 }
 
