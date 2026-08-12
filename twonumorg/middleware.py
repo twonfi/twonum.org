@@ -41,7 +41,7 @@ Licensed under the GNU Affero General Public License, version 3
 and Creative Commons Attribution-ShareAlike 4.0 International.
 There is absolutely no warranty.
 """
-    ALLOWED_PATH_REGEX = re.compile(r"^/(?:robots.txt|\.well-known/.*)$")
+    ALLOWED_PATH_REGEX = re.compile(r"^/(?:robots\.txt|\.well-known/.*|clankers\.txt)$")
 
     def __init__(self, get_response):
         self.get_response = get_response

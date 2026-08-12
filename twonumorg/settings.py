@@ -76,7 +76,6 @@ INSTALLED_APPS = [
     "allauth.mfa",
     "widget_tweaks",
     "slippers",
-    "django_minify_html",
     # django-crispy-forms
     "crispy_forms",
     "crispy_bootstrap5",

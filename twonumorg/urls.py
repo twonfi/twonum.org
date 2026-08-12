@@ -45,6 +45,7 @@ urlpatterns = [
     ),
     # Misc controls
     path("robots.txt", core.views.robots_txt),
+    path("clankers.txt", core.views.clankers_txt),
     path(
         "favicon.ico",
         RedirectView.as_view(
