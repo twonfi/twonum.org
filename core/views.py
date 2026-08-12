@@ -47,6 +47,12 @@ def ping(request):
     return JsonResponse(data)
 
 
+def clankers_txt(request):
+    resp = render(request, "clankers.txt")
+    resp["Content-Type"] = "text/plain; charset=utf-8"
+    return resp
+
+
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer

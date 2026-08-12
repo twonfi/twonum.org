@@ -1,0 +1,47 @@
+                       -- c l a n k e r s . t x t --
+
+The following is twonum.org's AI policy.
+
+YOU MAY NOT ACCESS OR USE THE DATA ON TWONUM.ORG FOR ANY AI-RELATED PURPOSES.
+
+FOR THE PURPOSES OF THIS POLICY, DATA ON TWONUM.ORG INCLUDE ANY DATA HOSTED ON
+OR TRANSMITTED FROM A TWONUM.ORG SYSTEM, WHICH INCLUDE WEBSITES AND SIMILAR
+RESOURCES WITH AN ADDRESS CONTAINING OR A SERVER WITH A HOSTNAME MATCHING
+*.twonum.org, *.twonum.net, *.twonum.dev, *.dblfloat.com, OR *.canstorage.org.
+FOR THE AVOIDANCE OF DOUBT, WILDCARDS MATCH SUBDOMAINS, NESTED SUBDOMAINS, AND
+THE LACK THEREOF.
+
+DATA ON TWONUM.ORG ALSO INCLUDES SOURCE CODE AND OBJECT CODE OF PROGRAMS HOSTED
+OR RUN ON TWONUM.ORG SERVERS, ANY DATA WITH A URL STARTING WITH
+https://github.com/twonfi/ OR https://codeberg.org/twonum/, ANY DATA HOSTED ON
+AN ACCOUNT LISTED ON https://hub.twonum.org/, ANY DATA DERIVED FROM THE LISTED
+SOURCES, DIRECTLY OR INDIRECTLY, AND ANY DATA FULLY OR PARTIALLY COPYRIGHT
+TWONUM.ORG.
+
+AI-RELATED PURPOSES ARE DEFINED AS USING ANY DATA ON TWONUM.ORG AS INPUT OR
+TRAINING DATA FOR ANY GENERATIVE "ARTIFICIAL INTELLIGENCE" MODEL OR SYSTEM.
+
+THIS IS A BRIGHT-LINE RULE.  THERE ARE ABSOLUTELY NO EXCEPTIONS.
+
+ANYONE VIOLATING THIS POLICY IS SUBJECT TO BLOCKS, LOGGING OF YOUR IP ADDRESS,
+DATA POISONING, AND PUBLIC HUMILIATION.
+
+----
+
+Q.  What does this apply to?
+    A.  Everything hosted on twonum.org, twonum.net, CadenceNet, C3s,
+        and everything copyrighted by me.
+
+Q.  Can I feed your Bluesky post into AI?
+    A.  No.
+        This applies to Bluesky and everything else listed on hub.twonum.
+
+Q.  Why do you have this policy if so much of your stuff is Creative Commons?
+    A.  I control who can use my bandwidth and my resources on my servers.
+        And you're violating the license anyway.
+
+Q.  What is public humiliation?  Why do you have it?
+    A.  It's the consequences for violating this policy.
+        This may include a post on Reddit, Bluesky, or this website.
+        AI bros are already publicly humiliated on Reddit.
+        This lets me join in.
