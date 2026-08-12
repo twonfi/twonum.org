@@ -109,7 +109,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     # From packages
-    "django_minify_html.middleware.MinifyHtmlMiddleware",
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
     "corsheaders.middleware.CorsMiddleware",
