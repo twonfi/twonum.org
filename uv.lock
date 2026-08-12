@@ -365,7 +365,7 @@ wheels = [
 
 [[package]]
 name = "django-comments-xtd"
-version = "2.10.11"
+version = "2.10.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
@@ -375,9 +375,9 @@ dependencies = [
     { name = "pytz" },
     { name = "six" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/65/c5/73a6305f811179f0fe0bba80f4e50336ea86bd737d3a1262303a50d2238a/django_comments_xtd-2.10.11.tar.gz", hash = "sha256:4a37cb28adae793ea3d98bbccff49544a8a430da0ab0826c29bbe99cb579601c", size = 112931, upload-time = "2025-12-09T21:18:39.232Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/62/03/57fb7728187d00673dafc442bfffddb8f06397aafee0e4d50d1df018334e/django_comments_xtd-2.10.12.tar.gz", hash = "sha256:56f736a291e76a13c935202d1d6ea8ad9bf530707075ed128888d47499565a77", size = 113066, upload-time = "2026-07-11T17:55:22.692Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b4/8c/cb105dd467d61e302fb8fb5e279b56c5c7f2e43f0fd9db45128d2c468a7a/django_comments_xtd-2.10.11-py3-none-any.whl", hash = "sha256:d81b03efd760923ff416bbbe5513ee4704e98a1bfe110fd4f6df2bbe6a50e229", size = 157618, upload-time = "2025-12-09T21:18:38.01Z" },
+    { url = "https://files.pythonhosted.org/packages/e0/5d/75bb9d84230eee21faf87e060c3c50a3985e00fc6d26e8ebfd4af25750e0/django_comments_xtd-2.10.12-py3-none-any.whl", hash = "sha256:5aee54d205d989f62476ed0d2d4006b6f60a542dc4342422e0cd5a85c2250f08", size = 157625, upload-time = "2026-07-11T17:55:21.167Z" },
 ]
 
 [[package]]
@@ -520,14 +520,14 @@ wheels = [
 
 [[package]]
 name = "djangorestframework"
-version = "3.16.1"
+version = "3.17.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8a/95/5376fe618646fde6899b3cdc85fd959716bb67542e273a76a80d9f326f27/djangorestframework-3.16.1.tar.gz", hash = "sha256:166809528b1aced0a17dc66c24492af18049f2c9420dbd0be29422029cfc3ff7", size = 1089735, upload-time = "2025-08-06T17:50:53.251Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ca/d7/c016e69fac19ff8afdc89db9d31d9ae43ae031e4d1993b20aca179b8301a/djangorestframework-3.17.1.tar.gz", hash = "sha256:a6def5f447fe78ff853bff1d47a3c59bf38f5434b031780b351b0c73a62db1a5", size = 905742, upload-time = "2026-03-24T16:58:33.705Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b0/ce/bf8b9d3f415be4ac5588545b5fcdbbb841977db1c1d923f7568eeabe1689/djangorestframework-3.16.1-py3-none-any.whl", hash = "sha256:33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec", size = 1080442, upload-time = "2025-08-06T17:50:50.667Z" },
+    { url = "https://files.pythonhosted.org/packages/5a/e1/2c516bdc83652b1a60c6119366ac2c0607b479ed05cd6093f916ca8928f8/djangorestframework-3.17.1-py3-none-any.whl", hash = "sha256:c3c74dd3e83a5a3efc37b3c18d92bd6f86a6791c7b7d4dff62bb068500e76457", size = 898844, upload-time = "2026-03-24T16:58:31.845Z" },
 ]
 
 [[package]]
@@ -1199,7 +1199,7 @@ requires-dist = [
     { name = "django-minify-html", specifier = "~=1.14.0" },
     { name = "django-tz-detect", specifier = "~=0.5.0" },
     { name = "django-widget-tweaks", specifier = "~=1.5.0" },
-    { name = "djangorestframework", specifier = "~=3.16.1" },
+    { name = "djangorestframework", specifier = "~=3.17.1" },
     { name = "djangorestframework-stubs", specifier = ">=3.16.8" },
     { name = "drf-spectacular", extras = ["sidecar"], specifier = ">=0.29.0" },
     { name = "fido2", specifier = "~=2.2.1" },
