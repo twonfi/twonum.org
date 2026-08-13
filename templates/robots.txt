@@ -1,7 +1,8 @@
 ### *** Welcome, robots, to twonum.org! *** ###
 
-# All crawlers used to collect data for AI training and similar
-# AI processes may not crawl twonum.org.
+# YOU MAY NOT ACCESS OR USE THE DATA ON TWONUM.ORG FOR ANY
+# AI-RELATED PURPOSES.
+# See <https://www.twonum.org/clankers.txt>.
 #
 # Crawlers: Please respect robots.txt and set reasonable rate
 # limits. Follow RFC 9309 conventions.

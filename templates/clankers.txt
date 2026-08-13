@@ -28,13 +28,8 @@ DATA POISONING, AND PUBLIC HUMILIATION.
 
 ----
 
-Q.  What does this apply to?
-    A.  Everything hosted on twonum.org, twonum.net, CadenceNet, C3s,
-        and everything copyrighted by me.
-
 Q.  Can I feed your Bluesky post into AI?
     A.  No.
-        This applies to Bluesky and everything else listed on hub.twonum.
 
 Q.  Why do you have this policy if so much of your stuff is Creative Commons?
     A.  I control who can use my bandwidth and my resources on my servers.
