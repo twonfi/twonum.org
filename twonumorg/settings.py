@@ -85,12 +85,13 @@ INSTALLED_APPS = [
     "django_comments_xtd",
     "django_comments",
     # twonum.org
-    "core",
-    "doublefloat",
-    "projects",
-    "about",
-    "home",
-    "pronums",
+    "core.apps.CoreConfig",
+    "doublefloat.apps.DoublefloatConfig",
+    "projects.apps.ProjectsConfig",
+    "about.apps.AboutConfig",
+    "home.apps.HomeConfig",
+    "pronums.apps.PronumsConfig",
+    "music.apps.MusicConfig"
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 

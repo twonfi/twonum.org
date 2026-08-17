@@ -59,6 +59,7 @@ urlpatterns = [
     path("projects/", include("projects.urls")),
     path("about/", include("about.urls")),
     path("pronums/", include("pronums.urls")),
+    path("music/", include("music.urls")),
     path("", include("home.urls")),
 ]
 
@@ -70,5 +71,6 @@ urlpatterns = [
 #     )
 
 # Custom error pages
+handler403 = "core.views.error_403"
 handler404 = "core.views.error_404"
 handler500 = "core.views.error_500"

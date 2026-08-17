@@ -25,6 +25,27 @@ def robots_txt(request):
 
 
 # noinspection PyUnusedLocal
+def error_401(request, message: str | None = None):
+    """401 must be done manually."""
+    context = {
+        "exception": message,
+    }
+    resp = render(request, "core/errors/401.txt", context, status=401)
+    resp["Content-Type"] = "text/plain; charset=utf-8"
+    return resp
+
+
+# noinspection PyUnusedLocal
+def error_403(request, exception):
+    context = {
+        "exception": str(exception),
+    }
+    resp = render(request, "core/errors/403.txt", context, status=403)
+    resp["Content-Type"] = "text/plain; charset=utf-8"
+    return resp
+
+
+# noinspection PyUnusedLocal
 def error_404(request, exception):
     resp = render(request, "core/errors/404.txt", status=404)
     resp["Content-Type"] = "text/plain; charset=utf-8"
@@ -36,7 +57,6 @@ def error_404(request, exception):
 def error_500(request):
     resp = render(request, "core/errors/500.txt", status=500)
     resp["Content-Type"] = "text/plain; charset=utf-8"
-    resp["The-Truly-Evil-Devs"] = "Status: 500"
     return resp
 
 

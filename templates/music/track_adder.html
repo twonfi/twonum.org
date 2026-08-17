@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <p>Add tracks to a release. The list must be formatted as:</p>
+  <pre>
+01 Prologue
+02 First Steps</pre>
+  <p>The entire list is atomic. If one track fails, all changes are rolled back.</p>
+  <p>Only the first error is shown.</p>
+
+  <fieldset>
+    <legend>Add tracks to a release</legend>
+    <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Add">
+    </form>
+  </fieldset>
+{% endblock main %}

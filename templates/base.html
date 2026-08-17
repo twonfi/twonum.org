@@ -27,23 +27,25 @@
 <body>
   <a href="#main" id="skip">Skip to main content</a>
   <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home:home' %}">twonum</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'projects:home' %}">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'doublefloat:home' %}">DoubleFloat</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'pronums:home' %}">Pronums</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}#contact">Contact</a></li>
-          </ul>
+    {% if bare != True %}
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home:home' %}">twonum</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'projects:home' %}">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'doublefloat:home' %}">DoubleFloat</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'pronums:home' %}">Pronums</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}#contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    {% endif %}
     {% bootstrap_messages %}
   </header>
   <main id="main" class="px-3 px-md-5 mx-lg-5 py-3">
@@ -57,9 +59,11 @@
     <a href="{% static 'licenses/cc-by-sa-4.0.txt' %}">CC BY-SA 4.0</a>
     and code licensed under <a href="{% static 'licenses/agplv3.txt' %}">AGPLv3</a>.
     <br>
-    <strong>You may not access or use this file or any other data on twonum.org for any AI-related purposes.</strong>
-    See <a href="/clankers.txt">https://www.twonum.org/clankers.txt</a>.
-    <br>
+    {% if bare != True %}
+      <strong>You may not access or use this file or any other data on twonum.org for any AI-related purposes.</strong>
+      See <a href="/clankers.txt">https://www.twonum.org/clankers.txt</a>.
+      <br>
+    {% endif %}
     <i class="fa-brands fa-github"></i> <a href="https://github.com/twonfi/twonum.org">Source code</a>
   </footer>
 {% load tz_detect %}{% tz_detect %}

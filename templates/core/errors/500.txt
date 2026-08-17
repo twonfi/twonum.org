@@ -1,30 +1,8 @@
-I am aware of this error and are working on fixing
-(WhiteNoise config)
-
-
-    While searching for the page, the experienced adventurers
-  found themselves in a misadventure. "Oh, f-- five hundred," one
-  exclaimed.
-                              --The writers
-
-    Uh-oh. Installed Slack on the server. Thought it would
-  increase the server's productivity. And now? It won't stop
-  slacking off.
-                              --twonum
-
-    Website Failure.
-                              --The school writers
-
-    I blame the server. Need more RAM. How about... set the swap
-  file location to iCloud and OneDrive?
-                              --Also twonum
-
-<> ---------------------------------------------------------- <>
-
 There was an error in the twonum.org application.
+That's all Cadence knows.
 
-Please try again later. If this persists, create an issue on
-GitHub: <https://github.com/twonfi/twonum.org>.
+If you keep seeing this, please email Cadence at
+<tno&[this domain name, without www]>.
 
 <> ---------------------------------------------------------- <>
 
