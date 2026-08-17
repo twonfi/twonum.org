@@ -1,6 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.core.validators import RegexValidator
+from django.utils._os import safe_join
+from django.utils.crypto import get_random_string
 
 # Example:
 # https://resonantunion.bandcamp.com/album/chicory-a-musical-tale
@@ -44,6 +46,15 @@ class Artist(models.Model):
         super().save(*args, **kwargs)
 
 
+def get_cover_filename(instance: Release, filename: str) -> str:
+    ext = filename.split('.')[-1]
+    if instance.slug:
+        filename = f"{instance.slug}_{get_random_string(12)}.{ext}"
+    else:
+        filename = f"{get_random_string(18)}.{ext}"
+    return f"music-covers/{filename}"
+
+
 class Release(models.Model):
     """A release, either an album or a single."""
 
@@ -59,7 +70,7 @@ class Release(models.Model):
     # Yes, MusicBrainz has full-resolution covers,
     # but tn.o is not MusicBrainz.
     # Insert all-your-friends-jumping-off-a-bridge-type saying here.
-    cover = models.ImageField(null=True, blank=True, help_text='Full-resolution covers should not be uploaded except in some rare cases (Lena Raine\'s "PhantomaOS", CC BY-SA, or Gayle\'s "abcdefu", public domain) due to copyright issues. Use ImageMagick to resize to 300x300.')
+    cover = models.ImageField(null=True, blank=True, upload_to=get_cover_filename, help_text='Full-resolution covers should not be uploaded except in some rare cases (Lena Raine\'s "PhantomaOS", CC BY-SA, or Gayle\'s "abcdefu", public domain) due to copyright. Use ImageMagick to resize to 300x300. Move to TheCrypt, paste into File Explorer: magick cover.png -resize 300x300 cover.png')
     # "This album is great because ..."
     notes = models.TextField(null=True, blank=True)
 
