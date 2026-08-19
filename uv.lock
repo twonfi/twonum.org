@@ -373,15 +373,15 @@ argon2 = [
 
 [[package]]
 name = "django-allauth"
-version = "65.15.1"
+version = "65.19.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "asgiref" },
     { name = "django" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/01/91/826ec2c0e81b36ed392995b23604cfb3bb993b6ee66017898c25d2fc33f0/django_allauth-65.15.1.tar.gz", hash = "sha256:94c5b9df0c3458019613983ba9e938518acf5c2e4cc6e0f262fc3684ffe45a95", size = 2216647, upload-time = "2026-04-02T09:18:57.62Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cf/93/776a61df6ce71f82e98afa1938c6e540ec239a8f80b2747c3c33cb9581cc/django_allauth-65.19.1.tar.gz", hash = "sha256:999d01d5c422a82734cf5804df9f5a0d1d4ddd6acbb2f807db976ed7d49f9cb3", size = 2286662, upload-time = "2026-08-13T10:02:17.956Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/20/a6cfe9d5b03bbc76af92060c86682c49df1b8a7a924179da3d20de71dd3a/django_allauth-65.15.1-py3-none-any.whl", hash = "sha256:c32a1031f5601cb66b0aba276fb482d5d1460045a8094795a4db2af0231ee432", size = 2023723, upload-time = "2026-04-02T09:18:33.177Z" },
+    { url = "https://files.pythonhosted.org/packages/77/f6/3c5f838f2e66903b422ae45f8f44b9e5da6457a4d4da125d426b339d86c8/django_allauth-65.19.1-py3-none-any.whl", hash = "sha256:5c507b53c45d2b7cbfcac7643d0123d5f0a7df7d43a882edcdbedb5f6b396421", size = 2074420, upload-time = "2026-08-13T10:02:26.339Z" },
 ]
 
 [package.optional-dependencies]
@@ -1306,7 +1306,7 @@ dev = [
 requires-dist = [
     { name = "crispy-bootstrap5", specifier = "~=2026.3" },
     { name = "django", extras = ["argon2"], specifier = "~=6.0.3" },
-    { name = "django-allauth", extras = ["socialaccount", "mfa"], specifier = "~=65.15.0" },
+    { name = "django-allauth", extras = ["socialaccount", "mfa"], specifier = "~=65.19.1" },
     { name = "django-allauth-ui", specifier = "~=1.8.1" },
     { name = "django-avatar", specifier = "~=9.0.0" },
     { name = "django-bootstrap5", specifier = "~=26.2" },

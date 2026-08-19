@@ -5,7 +5,7 @@ requires-python = ">=3.14"
 dependencies = [
     "Django[argon2]~=6.0.3",
     "psycopg~=3.3.3",
-    "django-allauth[socialaccount,mfa]~=65.15.0",
+    "django-allauth[socialaccount,mfa]~=65.19.1",
     "django-allauth-ui~=1.8.1",
     "fido2~=2.2.1",
     "django-widget-tweaks~=1.5.0",
