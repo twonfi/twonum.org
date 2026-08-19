@@ -34,7 +34,7 @@ dependencies = [
     "djangorestframework~=3.17.1",
     "djangorestframework-stubs>=3.16.8",
     "django-filter>=25.2",
-    "drf-spectacular[sidecar]>=0.29.0",  # sidecar to self-host as much as possible
+    "drf-spectacular[sidecar]>=0.30.0",  # sidecar to self-host as much as possible
     "graphene-django>=3.2.3",
 ]
 authors = [
