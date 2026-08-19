@@ -1322,7 +1322,7 @@ requires-dist = [
     { name = "django-widget-tweaks", specifier = "~=1.5.0" },
     { name = "djangorestframework", specifier = "~=3.17.1" },
     { name = "djangorestframework-stubs", specifier = ">=3.16.8" },
-    { name = "drf-spectacular", extras = ["sidecar"], specifier = ">=0.29.0" },
+    { name = "drf-spectacular", extras = ["sidecar"], specifier = ">=0.30.0" },
     { name = "fido2", specifier = "~=2.2.1" },
     { name = "graphene-django", specifier = ">=3.2.3" },
     { name = "gunicorn", specifier = "~=25.3.0" },
