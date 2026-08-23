@@ -280,11 +280,11 @@ fieldset {
 }
 
 .phantomaplayer {
-  height: 4em;
   display: flex;
   align-items: center;
   background-color: #1d0538;
   padding-right: 0.5em;
+  height: 4em;
   width: fit-content;
 
   * {
@@ -297,5 +297,17 @@ fieldset {
 
   .phantomaplayer-bandcamp {
     height: 1em;
+  }
+}
+
+@media screen and (width < 640px) {
+  .phantomaplayer {
+    height: fit-content;
+    flex-direction: column;
+
+    * {
+      margin: 0.2em;
+      text-align: center;
+    }
   }
 }
