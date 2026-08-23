@@ -202,6 +202,11 @@ SECURE_CSP = {
 }
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
+# HSTS
+SECURE_HSTS_SECONDS = 31536000         # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # *.www.twonum.org
+SECURE_HSTS_PRELOAD = True             # permanently include in browsers
+
 
 # HTTPS stuff
 if not DEBUG:
