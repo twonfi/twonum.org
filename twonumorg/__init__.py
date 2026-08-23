@@ -26,6 +26,4 @@ BLOCKED_USER_AGENTS = (
 
 
 def get_client_ip(request: HttpRequest, *args, **kwargs):
-    return ipware.get_client_ip(
-        request, *args, proxy_trusted_ips=["127.0.0.1", "::1"], **kwargs
-    )
+    return ipware.get_client_ip(request, *args, **kwargs)
