@@ -19,46 +19,55 @@ def view_post(request, slug: str):
 
 
 def home(request):
-    paginator = Paginator(Post.objects.all().order_by("-date"), 10)
-    page_obj = paginator.get_page(request.GET.get("page"))
-    elided_page_range = paginator.get_elided_page_range(page_obj.number)
+    years = Post.objects.values_list(
+        "date__year",
+        flat=True,
+    ).order_by("-date")
+    # Remove duplicated
+    years = list(dict.fromkeys(years))
+
+    posts = []
+
+    for year in years:
+        year_posts = Post.objects.filter(
+            date__year=year,
+        ).order_by("-date")
+        item = (year, year_posts)
+        posts.append(item)
 
     context = {
-        "title": "DoubleFloat, the twonum blog",
+        "title": "Blog",
         "h1_from_title": False,
-        "posts": page_obj,
-        "elided": elided_page_range,
-        "categories": Category.objects.all(),
-        "pagination": paginator,
+        "posts": posts,
     }
 
     return render(request, "doublefloat/home.html", context)
 
 
-def category(request, slug):
-    cat = get_object_or_404(Category, slug=slug)
-
-    paginator = Paginator(
-        Post.objects.filter(categories=cat).order_by("-date"), 10
-    )
-    page_obj = paginator.get_page(request.GET.get("page"))
-    elided_page_range = paginator.get_elided_page_range(page_obj.number)
-
-    try:
-        project = Project.objects.prefetch_related("doublefloat_category").get(
-            doublefloat_category=cat
-        )
-    except ObjectDoesNotExist:
-        project = None
-
-    context = {
-        "title": f"{cat.title} on DoubleFloat",
-        "h1_from_title": False,
-        "cat": cat,
-        "posts": page_obj,
-        "elided": elided_page_range,
-        "pagination": paginator,
-        "project": project,
-    }
-
-    return render(request, "doublefloat/category.html", context)
+# def category(request, slug):
+#     cat = get_object_or_404(Category, slug=slug)
+#
+#     paginator = Paginator(
+#         Post.objects.filter(categories=cat).order_by("-date"), 10
+#     )
+#     page_obj = paginator.get_page(request.GET.get("page"))
+#     elided_page_range = paginator.get_elided_page_range(page_obj.number)
+#
+#     try:
+#         project = Project.objects.prefetch_related("doublefloat_category").get(
+#             doublefloat_category=cat
+#         )
+#     except ObjectDoesNotExist:
+#         project = None
+#
+#     context = {
+#         "title": f"{cat.title} on DoubleFloat",
+#         "h1_from_title": False,
+#         "cat": cat,
+#         "posts": page_obj,
+#         "elided": elided_page_range,
+#         "pagination": paginator,
+#         "project": project,
+#     }
+#
+#     return render(request, "doublefloat/category.html", context)

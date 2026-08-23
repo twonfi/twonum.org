@@ -3,14 +3,13 @@ from django.urls import reverse
 from django.contrib.sites.models import Site
 from django.conf import settings
 from django.utils.text import slugify
-from martor.models import MartorField
 
 User = settings.AUTH_USER_MODEL
 
 
 class Category(models.Model):
     title = models.CharField(max_length=255, unique=True)
-    desc = MartorField("Description")
+    desc = models.TextField("Description")
     slug = models.SlugField(max_length=255, blank=True)
 
     class Meta:
@@ -33,14 +32,14 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField()
     title = models.CharField(max_length=255, unique=True)
-    body = MartorField()
+    body = models.TextField()
     favorites = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="favorites", blank=True
     )
     categories = models.ManyToManyField(
         Category, related_name="category", blank=True
     )
-    allow_comments = models.BooleanField(default=True)
+    allow_comments = False
     slug = models.SlugField(max_length=255, blank=True)
 
     def save(self, *args, **kwargs):

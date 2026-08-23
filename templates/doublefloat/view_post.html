@@ -9,12 +9,9 @@
 
 {% block main %}
   <p id="page-info">
-    Posted by {{ post.author.username }} {{ post.date }}
-    <span id="categories">
-      {% for cat in post.categories.all %}
-        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
-      {% endfor %}
-    </span>
+    <a href="{% url 'doublefloat:home' %}">← Posts</a>
+    <br>
+    Posted by Cadence on <time datetime="{{ post.date|date:'Y-m-d\\TH:i:sO' }}">{{ post.date }}</time>
   </p>
 {{ post.body|markdown|safe }}
 {% include 'core/comments.html' with object=post %}

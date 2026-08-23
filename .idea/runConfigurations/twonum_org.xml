@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="twonum.org" type="Python.DjangoServer" factoryName="Django server">
-    <module name="twonum.org" />
+    <module name="twonumorg" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -10,11 +10,13 @@
       <env name="DJANGO_SETTINGS_MODULE" value="twonumorg.settings" />
     </envs>
     <option name="SDK_HOME" value="" />
-    <option name="SDK_NAME" value="Python 3.13 (twonum.org)" />
+    <option name="SDK_NAME" value="~\git\github.com\twonfi\twonum.org\.venv" />
     <option name="WORKING_DIRECTORY" value="" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
+    <option name="DEBUG_JUST_MY_CODE" value="true" />
+    <option name="RUN_TOOL" value="true" />
     <option name="launchJavascriptDebuger" value="false" />
     <option name="port" value="8000" />
     <option name="host" value="" />

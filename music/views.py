@@ -12,7 +12,9 @@ def track_adder(request):
     if not request.user.is_authenticated:
         return error_401(request)
 
-    if not request.user.is_staff or not request.user.has_perm("music.add_track"):
+    if not request.user.is_staff or not request.user.has_perm(
+        "music.add_track"
+    ):
         raise PermissionDenied
 
     if request.method == "POST":
@@ -22,7 +24,7 @@ def track_adder(request):
             # Transactions are simple
             try:
                 with transaction.atomic():
-                    text = form.cleaned_data['text'].strip().splitlines()
+                    text = form.cleaned_data["text"].strip().splitlines()
 
                     for i, track in enumerate(text):
                         ln = i + 1
@@ -34,25 +36,37 @@ def track_adder(request):
                         try:
                             number, title = track.split(maxsplit=1)
                         except ValueError as e:
-                            raise ValueError(f"Line {ln}: Number or title not present.") from e
+                            raise ValueError(
+                                f"Line {ln}: Number or title not present."
+                            ) from e
 
                         release = form.cleaned_data["release"]
 
                         try:
                             number = int(number.strip())
                         except ValueError as e:
-                            raise ValueError(f"Line {ln}: Number must be a number.") from e
+                            raise ValueError(
+                                f"Line {ln}: Number must be a number."
+                            ) from e
                         # 0 is allowed here for singles and other
                         # non-standard album labels
                         if not (0 <= number <= 4096):
-                            raise ValueError(f"Line {ln}: Number must not be outrageous.")
+                            raise ValueError(
+                                f"Line {ln}: Number must not be outrageous."
+                            )
 
                         title = title.strip()
                         if len(title) > 255:
-                            raise ValueError(f"Line {ln}: Title must be less than 256 characters.")
+                            raise ValueError(
+                                f"Line {ln}: Title must be less than 256 characters."
+                            )
 
-                        if Track.objects.filter(release=release, number=number).exists():
-                            raise ValueError(f"Line {ln}: Track {number} for release {release} already exists.")
+                        if Track.objects.filter(
+                            release=release, number=number
+                        ).exists():
+                            raise ValueError(
+                                f"Line {ln}: Track {number} for release {release} already exists."
+                            )
 
                         track = Track()
                         track.release = release
@@ -60,7 +74,7 @@ def track_adder(request):
                         track.title = title
                         track.save()
             except ValueError as e:
-                form.add_error('text', str(e))
+                form.add_error("text", str(e))
             else:
                 return HttpResponse("Done.", content_type="text/plain")
     else:

@@ -6,6 +6,8 @@ from allauth.account.decorators import secure_admin_login
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import RedirectView
 from django.templatetags.static import static
+from django.conf.urls.static import static as static_path
+from django.conf import settings
 from graphene_django.views import GraphQLView
 
 import core.views
@@ -26,7 +28,7 @@ sitemaps = {
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
-    path("comments/", include("django_comments_xtd.urls")),
+    # path("comments/", include("django_comments_xtd.urls")),
     path("_tz_detect/", include("tz_detect.urls")),
     path("avatar/", include("avatar.urls")),
     path("accounts/", include("allauth.urls")),
@@ -49,26 +51,38 @@ urlpatterns = [
     path(
         "favicon.ico",
         RedirectView.as_view(
-            url=static("favicons/favicon.ico"),
-            permanent=True
-        )
+            url=static("favicons/favicon.ico"), permanent=True
+        ),
     ),
     path("ping/", core.views.ping),
     # twonum.org
-    path("doublefloat/", include("doublefloat.urls")),
+    path("blog/", include("doublefloat.urls")),
+    re_path(
+        r"^doublefloat/(?P<path>.*)$",
+        RedirectView.as_view(url="/blog/%(path)s", permanent=True, query_string=True),
+        name="root-redirect",
+    ),
     path("projects/", include("projects.urls")),
-    path("about/", include("about.urls")),
+    path("contact/", include("about.urls")),
+    path(
+        "about/",
+        RedirectView.as_view(url="/contact/", permanent=True),
+        name="root-redirect",
+    ),
     path("pronums/", include("pronums.urls")),
     path("music/", include("music.urls")),
     path("", include("home.urls")),
 ]
 
+if settings.DEBUG:
+    urlpatterns.append(path("tndebug/", include("tndebug.urls")))
+
 # Handle media files in development
-# if settings.DEBUG:
-#     urlpatterns += static(
-#         settings.MEDIA_URL,
-#         document_root=settings.MEDIA_ROOT
-#     )
+if settings.DEBUG:
+    urlpatterns += static_path(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
 
 # Custom error pages
 handler403 = "core.views.error_403"

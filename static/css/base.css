@@ -1,3 +1,13 @@
+/*
+ * twostyles, the new twonum.org stylesheet
+ * copyright twonum.org
+ * AGPLv3
+ */
+
+:root {
+  --aside-text-color: #ccc
+}
+
 #skip {
   position: absolute;
   left: -10000px;
@@ -14,13 +24,51 @@
 
 body {
   font-family: Outfit, system-ui, sans-serif;
-  background-color: #1e1e2e;
+  background-color: #1d0538;
+  /* just hardcode it */
+  background-image: url("/static/bg/bg.png");
+  margin: 0;
+  padding: 0;
 }
 
-nav.navbar, footer {
-  /* Catppuccin */
+#twostyles {
+  display: flex;
+  margin: 1rem;
+}
+
+nav, footer {
   background-color: #181825;
   color: #cdd6f4;
+}
+
+nav {
+  padding: 0.7em;
+  border-radius: 10px;
+  font-size: 12pt;
+
+  #twostyles-nav-gears, #twostyles-button {
+    image-rendering: pixelated;
+  }
+
+  #twostyles-nav-gearbox {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    color: white;
+    display: block;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0.3em 0;
+  }
 }
 
 main, footer {
@@ -40,16 +88,125 @@ main, footer {
   }
 }
 
+main {
+  margin: 0 min(5rem, 6vw);
+  color: white;
+  width: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+footer {
+  padding: 1.3rem 4rem;
+}
+
+/* anything smaller than a tablet */
+@media screen and (width < 768px) {
+  #twostyles {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      li {
+        display: inline;
+        line-height: 3em;
+
+        a {
+          display: inline;
+        }
+      }
+
+      li:has(hr) {
+        display: none;
+      }
+    }
+
+    #twostyles-nav-gearbox, #twostyles-nav-gears {
+      display: none;
+    }
+  }
+
+  main {
+    margin: 1em 0 0;
+  }
+}
+
+select, textarea, input {
+  font-family: Outfit, sans-serif;
+  background-color: #110320;
+  color: white;
+  border: 2px solid #383247;
+  border-radius: 5px;
+}
+
+select[required] option[value=""] {
+  font-style: italic;
+}
+
+textarea {
+  display: block;
+  font-family: monospace;
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+.helptext {
+  display: block;
+  font-size: 0.9em;
+  color: var(--aside-text-color);
+}
+
+button, input[type=submit], header nav li a {
+  padding: 0.6em;
+  background-color: #1d0538;
+  color: white;
+  font-family: Outfit, sans-serif;
+  font-size: 1em;
+  cursor: default;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #453d57;
+}
+
+button:active, input[type=submit]:active {
+  background-color: #120323;
+  border: 2px solid #383247;
+  color: #ddd;
+}
+
+header nav li a, .button-old {
+  border-radius: 0;
+  border-top: 2px solid #453d57;
+  border-left: 2px solid #453d57;
+  border-bottom: 2px solid #0e021c;
+  border-right: 2px solid #0e021c;
+}
+
+header nav li a:active, .button-old:active {
+  background-color: #120323;
+  border-bottom: 2px solid #453d57;
+  border-right: 2px solid #453d57;
+  border-top: 2px solid #0e021c;
+  border-left: 2px solid #0e021c;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: monospace;
 }
 
 h1 {
-  text-align: center;
   font-size: 3em;
-  background-image: linear-gradient(to bottom, white 0%, #999 100%);
-  background-clip: text;
-  color: transparent;
+  color: white;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1:first-of-type {
+  margin-top: 0;
 }
 
 h2 {
@@ -61,33 +218,27 @@ h2 {
 
 hgroup:has(h1) p {
   font-size: 1.7em;
-  text-align: center;
 }
 
-#page-info {
-  text-align: center;
-  font-size: 1.1em;
+#page-info, .article-info {
+  font-size: 0.9em;
+  color: var(--aside-text-color);
 }
 
 .btnset * {
   margin: 0 .3em;
 }
 
-section:not(.card), article:not(.card) {
+.article {
   background-color: #313244;
   border-radius: 15px;
   margin: 2em 0;
-  padding: 1em;
-}
-
-.card {
-  max-width: 100%;
+  padding: 0.5em 1em;
 }
 
 .icon-group {
   margin: 1em auto;
   padding: 0;
-  text-align: center;
   li {
     list-style: none;
     display: inline;
@@ -106,6 +257,19 @@ blockquote {
   padding-left: 1em;
 }
 
-summary {
-  font-weight: bold;
+details {
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+fieldset {
+  border: 2px dotted #453d57;
+
+  legend {
+    padding: 5px 10px;
+    background-color: #453d57;
+    border-radius: 5px;
+  }
 }

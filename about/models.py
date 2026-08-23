@@ -8,7 +8,7 @@ class TimeMachine(models.Model):
         Site, on_delete=models.CASCADE, primary_key=True
     )
     hits = models.PositiveBigIntegerField(default=0)
-    allow_comments = True  # Guestbook uses django-comments-xtd
+    # allow_comments = True  # Guestbook uses django-comments-xtd
 
     def __str__(self):
         return str(self.site)

@@ -1,22 +1,24 @@
-{% load static %}{% load django_bootstrap5 %}<!DOCTYPE html>
-<html lang="en-CA" data-bs-theme="dark">
+{% load static %}<!DOCTYPE html>
+<html id="twonumorg" lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block head_title %}{% endblock head_title %}{{ title }}{% if show_site_name_in_title is not False %} &ndash; {{ request.site.name }}{% endif %}</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css" integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link href="https://twonum.org/_f/Outfit/1.css" rel="stylesheet" integrity="sha512-M+KY+VRjfG2n8vhjZ4Qw+++aELqpDFlevb2c8sfXJwdHuRWDRjGnLFwjjbYdSgc6w6U0RnwS8Lxx6k1SrW8tjg==" crossorigin>
   <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
   <link rel="icon" href="{% static 'favicons/favicon-256.png' %}" type="image/png" sizes="256x256">
   <link rel="icon" href="{% static 'favicons/favicon.svg' %}" type="image/svg+xml">
   {% if masonry %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'ext/masonry/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'ext/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
   {% endif %}
+  <noscript>
+    <!--suppress CssUnusedSymbol -->
+    <style nonce="{{ csp_nonce }}">
+      .yesscript { display: none !important; }
+    </style>
+  </noscript>
 {% block head %}{% endblock head %}
   <link rel=stylesheet href=https://twonum.org/_hsts integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" crossorigin>
   <!--
@@ -26,48 +28,48 @@
 </head>
 <body>
   <a href="#main" id="skip">Skip to main content</a>
-  <header>
-    {% if bare != True %}
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home:home' %}">twonum</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'projects:home' %}">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'doublefloat:home' %}">DoubleFloat</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'pronums:home' %}">Pronums</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'about:about' %}#contact">Contact</a></li>
-            </ul>
+  <div id="twostyles">
+    <header>
+      {% if bare != True %}
+        <nav>
+          <a href="{% url 'home:home' %}"><img id="twostyles-button" src="{% static 'button/button.png' %}" alt='A mountain in the bottom left corner, a gear in the top right, and the word "twonum" on top of star patterns'></a>
+          <ul>
+            {# TODO #}
+{#            <li><a href="{% url 'about:about' %}">↑ Button!</a></li>#}
+            <li><hr></li>
+            <li><a href="{% url 'home:home' %}">Home</a></li>
+            <li><a href="{% url 'projects:home' %}">Projects</a></li>
+            <li><a href="{% url 'doublefloat:home' %}">Blog</a></li>
+            <li><a href="{% url 'pronums:home' %}">Pronums</a></li>
+            <li><a href="https://hub.twonum.org/">Links</a></li>
+            <li><a href="{% url 'about:about' %}#contact">Contact</a></li>
+          </ul>
+          <div id="twostyles-nav-gearbox">
+           <img id="twostyles-nav-gears" src="{% static 'gears/gears_nobg.png' %}" alt='Pixel art of a gear, a grey box with a purple letter "t", and a blue mountain layered on top of each other'>
           </div>
-        </div>
-      </nav>
-    {% endif %}
-    {% bootstrap_messages %}
-  </header>
-  <main id="main" class="px-3 px-md-5 mx-lg-5 py-3">
+        </nav>
+      {% endif %}
+    </header>
+    <main id="main">
 {% block pre_h1 %}{% endblock %}
-    {% if title and h1_from_title is not False %}<h1>{{ title }}</h1>{% endif %}
+      {% if title and h1_from_title is not False %}<h1>{{ title }}</h1>{% endif %}
 {% block main %}{% endblock %}
-  </main>
+    </main>
+  </div>
   <footer class="px-5 py-4">
     &copy; {% now "Y" %} twonum.
-    Unless otherwise noted, content licensed under <i class="fa-brands fa-creative-commons"></i>
+    Unless otherwise noted, content licensed under
     <a href="{% static 'licenses/cc-by-sa-4.0.txt' %}">CC BY-SA 4.0</a>
     and code licensed under <a href="{% static 'licenses/agplv3.txt' %}">AGPLv3</a>.
     <br>
-    {% if bare != True %}
+    {% if not bare %}
       <strong>You may not access or use this file or any other data on twonum.org for any AI-related purposes.</strong>
       See <a href="/clankers.txt">https://www.twonum.org/clankers.txt</a>.
       <br>
     {% endif %}
-    <i class="fa-brands fa-github"></i> <a href="https://github.com/twonfi/twonum.org">Source code</a>
+    <a href="https://github.com/twonfi/twonum.org">Source code</a>
   </footer>
 {% load tz_detect %}{% tz_detect %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js" integrity="sha512-zKeerWHHuP3ar7kX2WKBSENzb+GJytFSBL6HrR2nPSR1kOX1qjm+oHooQtbDpDBSITgyl7QXZApvDfDWvKjkUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% if masonry %}<script src="{% static 'js/masonry.js' %}"></script>{% endif %}
 </body>
 </html>

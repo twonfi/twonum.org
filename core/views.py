@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from rest_framework import viewsets, permissions
 from django.contrib.auth import get_user_model
 
-from twonumorg import BLOCKED_USER_AGENTS
+from twonumorg import BLOCKED_USER_AGENTS, get_client_ip
 from core import serializers
 
 User = get_user_model()
@@ -62,7 +62,11 @@ def error_500(request):
 
 # noinspection PyUnusedLocal
 def ping(request):
-    data = {"date": datetime.now().isoformat(), "server": settings.SERVER}
+    data = {
+        "date": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "server": settings.SERVER,
+        "ip": get_client_ip(request)[0],
+    }
 
     return JsonResponse(data)
 
