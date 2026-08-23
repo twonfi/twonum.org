@@ -51,7 +51,19 @@
       </a>
       {% endif %}
     {% endfor %}
+    <br>
+
   </section>
 
-  <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="60"></iframe>
+  <div id="home-bottom">
+    <a href="https://notbyai.fyi">
+        <img
+          id="not-by-ai"
+          src="{% static 'img/not-by-ai.svg' %}"
+          alt="Developed by a human, not by AI"
+          title="Cadence thinks herself. twonum.org was made by Cadence, line by line, image by image."
+        >
+    </a>
+    <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="40"></iframe>
+  </div>
 {% endblock main %}

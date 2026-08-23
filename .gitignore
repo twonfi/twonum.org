@@ -121,3 +121,4 @@ cython_debug/
 
 /media/
 /staticroot/
+/staticfiles/

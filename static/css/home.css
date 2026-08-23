@@ -1,6 +1,4 @@
 #webring {
-  display: flex;
-  margin: 0 auto;
   border-radius: 15px;
   border: none;
 }
@@ -15,4 +13,10 @@
     margin-right: 10px;
     margin-bottom: 10px;
   }
+}
+
+#home-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
