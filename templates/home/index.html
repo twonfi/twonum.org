@@ -35,8 +35,24 @@
 
   <hr>
 
-  <h2>buttons!</h2>
+  <section id="bgm">
+    <h2>music!</h2>
+    <p>Here's some music to listen to! These are all Creative Commons-licensed. Please support these artists!</p>
+    <div class="phantomaplayer">
+      <img src="{% static 'respoke2023/cover.png' %}" alt>
+      <audio controls src="{% static 'respoke2023/7.flac' %}"><a href="{% static 'respoke2023/7.flac' %}">Open</a></audio>
+      <span>
+        <a href="gratiaproductions.bandcamp.com/album/bespoke-gts-2023">BespokE: GTS 2023</a>
+        &ndash; Sparxe vs. takehirotei
+        &ndash; Cosmic Fragmentation
+      </span>
+      <a href="https://gratiaproductions.bandcamp.com/album/bespoke-gts-2023" title="Buy on Bandcamp">
+        <img class="phantomaplayer-bandcamp" src="{% static 'img/bandcamp.svg' %}" alt="Bandcamp"></a>
+    </div>
+  </section>
+
   <section id="buttons">
+    <h2>buttons!</h2>
     {% for button in buttons %}
       {% if button.url %}
       <a href="{{ button.url }}">
@@ -51,8 +67,6 @@
       </a>
       {% endif %}
     {% endfor %}
-    <br>
-
   </section>
 
   <div id="home-bottom">

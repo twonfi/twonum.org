@@ -273,3 +273,24 @@ fieldset {
     border-radius: 5px;
   }
 }
+
+.phantomaplayer {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  background-color: #1d0538;
+  padding-right: 0.5em;
+  width: fit-content;
+
+  * {
+    margin-right: 0.5em;
+  }
+
+  img:not(.phantomaplayer-bandcamp) {
+    height: 4em;
+  }
+
+  .phantomaplayer-bandcamp {
+    height: 1em;
+  }
+}
