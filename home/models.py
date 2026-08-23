@@ -14,7 +14,11 @@ def get_button_filename(instance: Button, filename: str) -> str:
 class Button(models.Model):
     """An 88x31 button."""
 
-    id = models.PositiveIntegerField(primary_key=True, verbose_name="Sort key", help_text="Sorted ascending.")
+    id = models.PositiveIntegerField(
+        primary_key=True,
+        verbose_name="Sort key",
+        help_text="Sorted ascending.",
+    )
     name = models.SlugField()
     image = models.ImageField(
         upload_to=get_button_filename,

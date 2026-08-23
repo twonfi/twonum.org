@@ -59,7 +59,9 @@ urlpatterns = [
     path("blog/", include("doublefloat.urls")),
     re_path(
         r"^doublefloat/(?P<path>.*)$",
-        RedirectView.as_view(url="/blog/%(path)s", permanent=True, query_string=True),
+        RedirectView.as_view(
+            url="/blog/%(path)s", permanent=True, query_string=True
+        ),
         name="root-redirect",
     ),
     path("projects/", include("projects.urls")),
@@ -80,8 +82,7 @@ if settings.DEBUG:
 # Handle media files in development
 if settings.DEBUG:
     urlpatterns += static_path(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
     )
 
 # Custom error pages

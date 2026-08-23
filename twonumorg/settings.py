@@ -184,9 +184,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Security
-CORS_ALLOWED_ORIGINS = [
-    "https://twonum.org"
-]
+CORS_ALLOWED_ORIGINS = ["https://twonum.org"]
 SECURE_CSP = {
     "default-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
     "script-src": [CSP.SELF, CSP.NONCE] + CORS_ALLOWED_ORIGINS,
@@ -203,9 +201,9 @@ SECURE_CSP = {
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 # HSTS
-SECURE_HSTS_SECONDS = 31536000         # 1 year
+SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # *.www.twonum.org
-SECURE_HSTS_PRELOAD = True             # permanently include in browsers
+SECURE_HSTS_PRELOAD = True  # permanently include in browsers
 
 
 # HTTPS stuff

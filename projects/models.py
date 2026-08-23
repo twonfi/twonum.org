@@ -11,8 +11,12 @@ class Project(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     desc = models.TextField("Description")
-    banner = models.ImageField(upload_to="project-banners", null=True, blank=True)
-    banner_alt = models.CharField(max_length=511, null=True, blank=True, verbose_name="Banner alt text")
+    banner = models.ImageField(
+        upload_to="project-banners", null=True, blank=True
+    )
+    banner_alt = models.CharField(
+        max_length=511, null=True, blank=True, verbose_name="Banner alt text"
+    )
     date = models.DateTimeField()
 
     demo_url = models.URLField("Demo URL", null=True, blank=True)

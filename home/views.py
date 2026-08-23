@@ -15,6 +15,7 @@ def _latest_or_none(model: type[Model], *args):
     else:
         return m
 
+
 INDEX_CSP = settings.SECURE_CSP
 INDEX_CSP["default-src"] += [
     "https://pagering.gideon.sh/flower.png",
