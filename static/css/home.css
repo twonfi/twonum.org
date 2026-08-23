@@ -15,8 +15,17 @@
   }
 }
 
-#home-bottom {
+#webrings {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+  }
+}
+#webrings > * {
+  display: block;
+  margin: 0.3em;
 }
