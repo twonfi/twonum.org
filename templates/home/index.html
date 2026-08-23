@@ -64,6 +64,8 @@
           title="Cadence thinks herself. twonum.org was made by Cadence, line by line, image by image."
         >
     </a>
-    <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="40"></iframe>
+    <script src="{% static 'ext/pagering/embed.js' %}"></script>
+    <pagering-link theme="dark"></pagering-link>
+    <iframe id="hc-webring" src="https://webring.hackclub.com/embed.html" width="90" height="40"></iframe>
   </div>
 {% endblock main %}

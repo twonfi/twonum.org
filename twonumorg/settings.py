@@ -194,7 +194,11 @@ SECURE_CSP = {
     "frame-ancestors": [CSP.SELF],
     "frame-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
     "form-action": [CSP.SELF],
-    # "report-uri": "/csp-report/",
+    "connect-src": [CSP.SELF],
+    "media-src": ["*"],
+    "img-src": ["*"],
+    "font-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
+    "report-uri": "/csp-report/",
 }
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
