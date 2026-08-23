@@ -10,7 +10,7 @@ from core.templatetags.markdown_extras import markdown
 class ProjectsFeed(Feed):
     title = "twonum's projects"
     link = "/projects/"  # To avoid circular import with reverse()
-    description = "Projects made by twonum"
+    description = "the works of Cadence"
 
     def items(self):
         return Project.objects.order_by("-date")

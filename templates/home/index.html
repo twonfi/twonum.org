@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="canonical" href="https://{{ request.site.domain }}{% url 'home:home' %}">
+{% endblock %}
+
+{% block main %}
+  <h1>cadence here!</h1>
+  <p>Hello! I'm Cadence, also known as twonum.</p>
+  <p>I do some programming, some art, and going on adventures, sometimes. And writing on my website.</p>
+  <p>I'm still working on this website &ndash; it's under construction!</p>
+
+  <hr>
+
+  <h2>what interests me!</h2>
+  <ul>
+    <li>computers, programming</li>
+    <li>art</li>
+    <li>going outside...</li>
+    <li>writing here (all of those, except for one)</li>
+    <li>visiting others' websites</li>
+    <li>privacy</li>
+  </ul>
+
+  <h2>what I <em>hate</em></h2>
+  <ul>
+    <li>people that don't care about consent. <strong>don't touch me</strong>, ugh.</li>
+    <li>social media and other proprietary, data-tracking silos</li>
+    <li>Discord. please use Matrix instead.</li>
+  </ul>
+
+  <hr>
+
+  <h2>buttons!</h2>
+  <section id="buttons">
+    {% for button in buttons %}
+      {% if button.url %}
+      <a href="{{ button.url }}">
+      {% endif %}
+      <img
+        id="button_{{ button.name }}"
+        src="{{ button.image.url }}"
+        alt="{{ button.alt }}"
+        {% if button.title %}title="{{ button.title }}"{% endif %}
+      >
+      {% if button.url %}
+      </a>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <iframe id="webring" src="https://webring.hackclub.com/embed.html" width="90" height="60"></iframe>
+{% endblock main %}

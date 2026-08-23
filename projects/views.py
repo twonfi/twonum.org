@@ -5,8 +5,8 @@ from projects.models import Project
 
 def home(request):
     context = {
-        "title": "My projects",
-        "masonry": True,
+        "title": "Projects",
+        "h1_from_title": False,
         "projects": Project.objects.all(),
     }
 

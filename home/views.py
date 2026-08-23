@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.db.models import Model
+from django.views.decorators.csp import csp_override
+from django.conf import settings
 
-from projects.models import Project
-from doublefloat.models import Post
+from home.models import Button
 
 
 def _latest_or_none(model: type[Model], *args):
@@ -13,16 +14,19 @@ def _latest_or_none(model: type[Model], *args):
     else:
         return m
 
+INDEX_CSP = settings.SECURE_CSP
+INDEX_CSP["frame-src"] = INDEX_CSP["frame-src"] + [
+    "https://webring.hackclub.com/embed.html"
+]
 
-def home(request):
+
+@csp_override(config=INDEX_CSP)
+def index(request):
     context = {
-        "title": "twonum.org",
+        "title": "twonum's website",
         "show_site_name_in_title": False,
-        # "h1_from_title": False,
-        "post": _latest_or_none(Post, "date"),
-        "project": _latest_or_none(Project, "id"),
-        "user_agent": request.headers.get("User-Agent"),
-        "project_count": Project.objects.count(),
+        "h1_from_title": False,
+        "buttons": Button.objects.all(),
     }
 
-    return render(request, "home/home.html", context)
+    return render(request, "home/index.html", context)

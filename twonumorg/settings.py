@@ -3,6 +3,7 @@ import os
 
 from django.conf.global_settings import SESSION_COOKIE_SECURE
 from django.contrib.messages import constants as messages
+from django.utils.csp import CSP
 from environ import Env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,15 +76,14 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.mfa",
     "widget_tweaks",
-    "slippers",
     # django-crispy-forms
     "crispy_forms",
     "crispy_bootstrap5",
     # Auto-delete files after change in the associated object
     "django_cleanup.apps.CleanupConfig",
     # django-comments-xtd (in this order!)
-    "django_comments_xtd",
-    "django_comments",
+    # "django_comments_xtd",
+    # "django_comments",
     # twonum.org
     "core.apps.CoreConfig",
     "doublefloat.apps.DoublefloatConfig",
@@ -91,7 +91,8 @@ INSTALLED_APPS = [
     "about.apps.AboutConfig",
     "home.apps.HomeConfig",
     "pronums.apps.PronumsConfig",
-    "music.apps.MusicConfig"
+    "music.apps.MusicConfig",
+    "tndebug.apps.TnDebugConfig",
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 
@@ -113,7 +114,7 @@ MIDDLEWARE = [
     "tz_detect.middleware.TimezoneMiddleware",
     "allauth.account.middleware.AccountMiddleware",
     "corsheaders.middleware.CorsMiddleware",
-    "csp.middleware.CSPMiddleware",
+    "django.middleware.csp.ContentSecurityPolicyMiddleware",
 ]
 
 ROOT_URLCONF = "twonumorg.urls"
@@ -128,9 +129,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-            ],
-            "builtins": [
-                "slippers.templatetags.slippers",
+                "django.template.context_processors.csp",
             ],
         },
     },
@@ -184,22 +183,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# CORS and CSP
+# Security
 CORS_ALLOWED_ORIGINS = [
-    "https://cdn.jsdelivr.net",
-    "https://cdnjs.cloudflare.com",
-    "https://unpkg.com",
+    "https://twonum.org"
 ]
-# CONTENT_SECURITY_POLICY = {
-#     "DIRECTIVES": {
-#         "default-src": [csp.SELF] + CORS_ALLOWED_ORIGINS,
-#         "script-src": [csp.SELF, csp.NONCE] + CORS_ALLOWED_ORIGINS,
-#         "style-src": [csp.SELF, csp.NONCE] + CORS_ALLOWED_ORIGINS,
-#         "frame-ancestors": [csp.SELF],
-#         "form-action": [csp.SELF],
-#         "report-uri": "/csp-report/",
-#     },
-# }
+SECURE_CSP = {
+    "default-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
+    "script-src": [CSP.SELF, CSP.NONCE] + CORS_ALLOWED_ORIGINS,
+    "style-src": [CSP.SELF, CSP.NONCE] + CORS_ALLOWED_ORIGINS,
+    "frame-ancestors": [CSP.SELF],
+    "frame-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
+    "form-action": [CSP.SELF],
+    # "report-uri": "/csp-report/",
+}
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 
 # HTTPS stuff
@@ -355,18 +352,18 @@ MARTOR_ALTERNATIVE_JS_FILE_THEME = "martor/martor.js"
 MARTOR_ALTERNATIVE_CSS_FILE_THEME = "martor/martor.css"
 
 # django-comments-xtd
-COMMENTS_APP = "django_comments_xtd"
-COMMENTS_XTD_MAX_THREAD_LEVEL = 2
-COMMENTS_XTD_APP_MODEL_OPTIONS = {
-    "default": {
-        "allow_flagging": True,
-        "allow_feedback": True,
-        "show_feedback": True,
-        "who_can_post": "all",
-    },
-}
-COMMENTS_XTD_FROM_EMAIL = env("EMAIL_FROM")
-COMMENTS_XTD_CONTACT_EMAIL = env("EMAIL_CONTACT")
+# COMMENTS_APP = "django_comments_xtd"
+# COMMENTS_XTD_MAX_THREAD_LEVEL = 2
+# COMMENTS_XTD_APP_MODEL_OPTIONS = {
+#     "default": {
+#         "allow_flagging": True,
+#         "allow_feedback": True,
+#         "show_feedback": True,
+#         "who_can_post": "all",
+#     },
+# }
+# COMMENTS_XTD_FROM_EMAIL = env("EMAIL_FROM")
+# COMMENTS_XTD_CONTACT_EMAIL = env("EMAIL_CONTACT")
 # COMMENTS_XTD_API_GET_USER_AVATAR = "core.utils.avatar_url_from_comment"
 
 # django-avatar
