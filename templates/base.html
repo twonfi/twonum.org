@@ -34,15 +34,13 @@
         <nav>
           <a href="{% url 'home:home' %}"><img id="twostyles-button" src="{% static 'button/button.png' %}" alt='A mountain in the bottom left corner, a gear in the top right, and the word "twonum" on top of star patterns'></a>
           <ul>
-            {# TODO #}
-{#            <li><a href="{% url 'about:about' %}">↑ Button!</a></li>#}
+            <li><a href="https://www.twonum.org/blog/posts/website/#button">↑ button!</a></li>
             <li><hr></li>
-            <li><a href="{% url 'home:home' %}">Home</a></li>
-            <li><a href="{% url 'projects:home' %}">Projects</a></li>
-            <li><a href="{% url 'doublefloat:home' %}">Blog</a></li>
-            <li><a href="{% url 'pronums:home' %}">Pronums</a></li>
-            <li><a href="https://hub.twonum.org/">Links</a></li>
-            <li><a href="{% url 'about:about' %}#contact">Contact</a></li>
+            <li><a href="{% url 'doublefloat:home' %}">blog</a></li>
+            <li><a href="{% url 'projects:home' %}">projects</a></li>
+            <li><a href="{% url 'pronums:home' %}">pronums</a></li>
+            <li><a href="https://hub.twonum.org/">websites</a></li>
+            <li><a href="{% url 'about:about' %}#contact">contact</a></li>
           </ul>
           <div id="twostyles-nav-gearbox">
            <img id="twostyles-nav-gears" src="{% static 'gears/gears_nobg.png' %}" alt='Pixel art of a gear, a grey box with a purple letter "t", and a blue mountain layered on top of each other'>
