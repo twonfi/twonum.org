@@ -93,6 +93,7 @@ INSTALLED_APPS = [
     "pronums.apps.PronumsConfig",
     "music.apps.MusicConfig",
     "tndebug.apps.TnDebugConfig",
+    "cityfolk.apps.CityFolkConfig",
 ]
 INSTALLED_APPS += env("INSTALLED_APPS")
 

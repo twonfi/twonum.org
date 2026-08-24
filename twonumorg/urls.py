@@ -73,6 +73,7 @@ urlpatterns = [
     ),
     path("pronums/", include("pronums.urls")),
     path("music/", include("music.urls")),
+    path("folks/", include("cityfolk.urls")),
     path("", include("home.urls")),
 ]
 

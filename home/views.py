@@ -45,7 +45,9 @@ def index(request):
         "title": "twonum's website",
         "show_site_name_in_title": False,
         "h1_from_title": False,
-        "buttons": Button.objects.all().order_by("id"),
+        "buttons": Button.objects.filter(
+            featured_sortkey__isnull=False
+        ).order_by("featured_sortkey"),
     }
 
     return render(request, "home/index.html", context)

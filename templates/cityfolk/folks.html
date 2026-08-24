@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <p>Here's some really cool websites and people!</p>
+  <p>
+    I don't necessarily agree with <em>everything</em> these websites say.
+    If you think a website shouldn't be here, or if you want to take your website off this list,
+    please <a href="{% url 'about:about' %}">contact me</a>.
+  </p>
+
+  <section>
+    <h2>personal websites and people!</h2>
+    <ul>
+      {% for site in personal_websites %}
+        <li>
+          <a href="https://{{ site.domain }}">
+            {% if site.button %}
+              <img src="{{ site.button.image.url }}" alt="{{ site.button.alt }}" width="88" height="31">
+            {% endif %}
+            {{ site.domain }}</a>{% if site.button and site.button.title %}:
+            {{ site.button.title }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock main %}

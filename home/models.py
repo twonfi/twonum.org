@@ -14,12 +14,7 @@ def get_button_filename(instance: Button, filename: str) -> str:
 class Button(models.Model):
     """An 88x31 button."""
 
-    id = models.PositiveIntegerField(
-        primary_key=True,
-        verbose_name="Sort key",
-        help_text="Sorted ascending.",
-    )
-    name = models.SlugField()
+    name = models.SlugField(unique=True)
     image = models.ImageField(
         upload_to=get_button_filename,
         help_text="Should be a PNG file, not a GIF or JPEG file. Especially not a WebP file.",
@@ -32,9 +27,15 @@ class Button(models.Model):
     )
     title = models.CharField(
         max_length=511,
-        null=True,
         blank=True,
+        null=True,
         help_text='Also known as the "hover text", also read by screen readers.',
+    )
+    featured_sortkey = models.PositiveIntegerField(
+        verbose_name="Sort key on home page",
+        blank=True,
+        null=True,
+        help_text="Add a number to add to home page. Sorted ascending.",
     )
 
     def __str__(self) -> str:
