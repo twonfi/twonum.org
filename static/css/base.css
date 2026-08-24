@@ -279,6 +279,10 @@ fieldset {
   }
 }
 
+pre {
+  overflow-x: scroll;
+}
+
 .phantomaplayer {
   display: flex;
   align-items: center;
@@ -315,3 +319,8 @@ fieldset {
 .pixelated {
   image-rendering: pixelated;
 }
+
+/*
+ * end twostyles
+ * Have a great day! --Cadence
+ */
