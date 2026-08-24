@@ -4,7 +4,7 @@ from cityfolk.models import PersonalWebsite
 
 
 def folks(request):
-    personal_websites = PersonalWebsite.objects.all()
+    personal_websites = PersonalWebsite.objects.all().order_by("name")
 
     context = {
         "title": "folks and buddies",

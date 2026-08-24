@@ -12,7 +12,7 @@
     <h2>personal websites and people!</h2>
     <ul>
       {% for site in personal_websites %}
-        <li>
+        <li id="personal_{{ site.domain }}">
           <a href="https://{{ site.domain }}">
             {% if site.button %}
               <img class="web-button" src="{{ site.button.image.url }}" alt="{{ site.button.alt }}" width="88" height="31">
