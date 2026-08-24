@@ -17,9 +17,7 @@
             {% if site.button %}
               <img src="{{ site.button.image.url }}" alt="{{ site.button.alt }}" width="88" height="31">
             {% endif %}
-            {{ site.domain }}</a>{% if site.button and site.button.title %}:
-            {{ site.button.title }}
-          {% endif %}
+            {{ site.domain }}</a>{% if site.description %}: {{ site.description }}{% endif %}
         </li>
       {% endfor %}
     </ul>
