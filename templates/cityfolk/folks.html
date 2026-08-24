@@ -15,7 +15,7 @@
         <li>
           <a href="https://{{ site.domain }}">
             {% if site.button %}
-              <img src="{{ site.button.image.url }}" alt="{{ site.button.alt }}" width="88" height="31">
+              <img class="web-button" src="{{ site.button.image.url }}" alt="{{ site.button.alt }}" width="88" height="31">
             {% endif %}
             {{ site.name }}</a>{% if site.desc %}: {{ site.desc }}{% endif %}
         </li>

@@ -316,7 +316,7 @@ pre {
   }
 }
 
-.pixelated {
+.pixelated, .web-button {
   image-rendering: pixelated;
 }
 
