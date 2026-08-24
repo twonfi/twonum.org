@@ -34,13 +34,22 @@
         <nav>
           <a href="{% url 'home:home' %}"><img id="twostyles-button" src="{% static 'button/button.png' %}" alt='A mountain in the bottom left corner, a gear in the top right, and the word "twonum" on top of star patterns'></a>
           <ul>
+            {% if request.user.is_staff %}
+              <li><a class="twostyles-nav-admin" href="{% url 'admin:index' %}">admin</a></li>
+                {% if admin_url %}
+                  <li><a class="twostyles-nav-admin" href="{{ admin_url }}">{% if admin_name %}{{ admin_name }}{% else %}page{% endif %}</a></li>
+                {% else %}
+                  <li><a class="button-old-disabled" href="#">no page</a></li>
+                {% endif %}
+              <li><hr></li>
+            {% endif %}
             <li><a href="https://www.twonum.org/blog/posts/website/#button">↑ button!</a></li>
             <li><hr></li>
             <li><a href="{% url 'doublefloat:home' %}">blog</a></li>
             <li><a href="{% url 'projects:home' %}">projects</a></li>
             <li><a href="{% url 'pronums:home' %}">pronums</a></li>
             <li><a href="{% url 'cityfolk:folks' %}">people</a></li>
-            <li><a href="https://hub.twonum.org/">websites</a></li>
+            <li><a href="https://hub.twonum.org/">accounts</a></li>
             <li><a href="{% url 'about:about' %}#contact">contact</a></li>
           </ul>
           <div id="twostyles-nav-gearbox">

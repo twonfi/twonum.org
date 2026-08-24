@@ -47,8 +47,11 @@ class Post(models.Model):
             self.slug = slugify(self.title)[:50]
         super(Post, self).save(*args, **kwargs)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse("doublefloat:view_post", kwargs={"slug": self.slug})
+
+    def get_admin_url(self) -> str:
+        return reverse("admin:doublefloat_post_change", args=(self.pk,))

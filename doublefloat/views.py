@@ -1,10 +1,8 @@
-from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, get_object_or_404
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.paginator import Paginator
+from django.urls import reverse
 
-from doublefloat.models import Post, Category
-from projects.models import Project
+from doublefloat.models import Post
 
 
 def view_post(request, slug: str):
@@ -13,6 +11,8 @@ def view_post(request, slug: str):
     context = {
         "title": post.title,
         "post": post,
+        "admin_url": post.get_admin_url(),
+        "admin_name": "edit",
     }
 
     return render(request, "doublefloat/view_post.html", context)
@@ -39,6 +39,8 @@ def home(request):
         "title": "Blog",
         "h1_from_title": False,
         "posts": posts,
+        "admin_url": reverse("admin:doublefloat_post_add"),
+        "admin_name": "write",
     }
 
     return render(request, "doublefloat/home.html", context)

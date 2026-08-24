@@ -3,6 +3,7 @@ from django.db.models import Model
 from django.utils.csp import CSP
 from django.views.decorators.csp import csp_override
 from django.conf import settings
+from django.urls import reverse
 
 from home.models import Button
 
@@ -48,6 +49,8 @@ def index(request):
         "buttons": Button.objects.filter(
             featured_sortkey__isnull=False
         ).order_by("featured_sortkey"),
+        "admin_url": reverse("admin:home_button_changelist"),
+        "admin_name": "buttons",
     }
 
     return render(request, "home/index.html", context)

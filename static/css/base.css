@@ -199,6 +199,32 @@ header nav li a:active, .button-old:active {
   border-left: 2px solid #0e021c;
 }
 
+.twostyles-nav-admin {
+  background-color: #a12f1b;
+  border-bottom: 2px solid #702012;
+  border-right: 2px solid #702012;
+  border-top: 2px solid #ed563b;
+  border-left: 2px solid #ed563b;
+}
+
+.twostyles-nav-admin:active {
+  background-color: #7c2819;
+  border-bottom: 2px solid #ed563b;
+  border-right: 2px solid #ed563b;
+  border-top: 2px solid #702012;
+  border-left: 2px solid #702012;
+}
+
+button[disabled], button[disabled]:active,
+.button-old-disabled, .button-old-disabled:active {
+  background-color: #303030;
+  border-bottom: 2px solid #191919;
+  border-right: 2px solid #191919;
+  border-top: 2px solid #9f9f9f;
+  border-left: 2px solid #9f9f9f;
+  color: #bfbfbf;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: monospace;
 }
