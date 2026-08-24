@@ -196,7 +196,6 @@ SECURE_CSP = {
     "media-src": ["*"],
     "img-src": ["*"],
     "font-src": [CSP.SELF] + CORS_ALLOWED_ORIGINS,
-    "report-uri": "/csp-report/",
 }
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
