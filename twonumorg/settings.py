@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     # Single-line stuff
     "whitenoise.runserver_nostatic",
     "tz_detect",
-    "django_bootstrap5",
     "django_filters",
     "martor",
     "avatar",
@@ -78,7 +77,6 @@ INSTALLED_APPS = [
     "widget_tweaks",
     # django-crispy-forms
     "crispy_forms",
-    "crispy_bootstrap5",
     # Auto-delete files after change in the associated object
     "django_cleanup.apps.CleanupConfig",
     # django-comments-xtd (in this order!)
@@ -292,19 +290,6 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.ScryptPasswordHasher",
 ]
 
-# django-crispy-forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-# Bootstrap message tags
-MESSAGE_TAGS = {
-    messages.DEBUG: "alert-info",
-    messages.INFO: "alert-info",
-    messages.SUCCESS: "alert-success",
-    messages.WARNING: "alert-warning",
-    messages.ERROR: "alert-danger",
-}
-
 # DRF
 REST_FRAMEWORK = {
     # Versioning
@@ -335,28 +320,6 @@ SPECTACULAR_SETTINGS = {
 
 # django-graphene
 GRAPHENE = {"SCHEMA": "twonumorg.schema.schema"}
-
-# martor
-MARTOR_THEME = "bootstrap"
-MARTOR_ENABLE_ADMIN_CSS = False
-MARTOR_TOOLBAR_BUTTONS = [
-    "bold",
-    "italic",
-    "horizontal",
-    "heading",
-    "pre-code",
-    "blockquote",
-    "unordered-list",
-    "ordered-list",
-    "link",
-    "image-link",
-    # 'emoji',  # until dependency hell with pymdownx is fixed
-    "direct-mention",
-    "toggle-maximize",
-    "help",
-]
-MARTOR_ALTERNATIVE_JS_FILE_THEME = "martor/martor.js"
-MARTOR_ALTERNATIVE_CSS_FILE_THEME = "martor/martor.css"
 
 # django-comments-xtd
 # COMMENTS_APP = "django_comments_xtd"
