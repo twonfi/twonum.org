@@ -8,6 +8,7 @@ The codebase is a mess, so I'm not explaining it, but do email me if you dig aro
 
 ## Cookies
 - A `csrftoken` is set for every user using twonum.org for security purposes (to prevent cross-site request forgery attacks). This is set by the Django security middleware.
+- Time-zone detection may set a non-tracking cookie used to automatically change time zones.
 - Session tokens and other cookies are only set when logged in, which only Cadence (the admin) has access to.
 - Login attempts are logged by allauth and IP addresses may be collected. Again, login is admin-only, so you shouldn't be digging around the auth anyway.
 

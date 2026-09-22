@@ -28,8 +28,8 @@
 {% load static %}
 {% if show %}
 <script{% for key, value in script_attrs.items %} {{ key }}="{{ value }}"{% endfor %}>
+  window.tz_set_endpoint = '{% url "tz_detect__set" %}';
   let csrf_token = "{{ csrf_token }}";
-  let tz_set_endpoint = '{% url "tz_detect__set" %}';
   let csrf_header_name = '{{ csrf_header_name }}';
   (function() {
     let tz_script = document.createElement('script');
