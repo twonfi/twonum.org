@@ -29,7 +29,7 @@ dependencies = [
     "django-filter>=25.2",
     "drf-spectacular[sidecar]>=0.29.0",  # sidecar to self-host as much as possible
     "graphene-django>=3.2.3",
-    "django-ipware~=7.0.1",
+    "django-ipware~=8.0.0",
 ]
 authors = [
   {name = "twonum", email = "two@twonum.org"},
