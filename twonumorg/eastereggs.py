@@ -4,20 +4,19 @@ from random import choice
 
 POKEMON_QUESTION_COMMENTS = (
     # the ending song
-    "you see, tonight, it could go either way",
-    # pokemon_scarlet_spoilers.txt
-    "select this for spoilers",
+    "You see, tonight, it could go either way...",
     # Ed Sheeran's music is bad anyway
     "to Ed Sheeran Celestial. Yes to YOASOBI Biri-Biri.",
-    ", just why?",
-    "supa luigi galaxy!!!!!",
+    "Why are you asking hard questions like this?",
+    "I'm beating the Elite Four, and THIS is what I get?",
+    "Super Luigi Galaxy!",
     # Resetti
     (
         "You lied to official Pokémon League staff."
         " Your save file has been deleted."
     ),
     # YOASOBI -- Biri-Biri
-    "fun, electrical",
+    "Fun, electrical!",
 )
 
 
