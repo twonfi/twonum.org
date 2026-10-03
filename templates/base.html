@@ -21,6 +21,13 @@
     </style>
   </noscript>
 {% block head %}{% endblock head %}
+  <!-- Open the console if you're in DevTools!
+       Or, go to <https://www.twonum.org/easteregg/>.
+
+{{ pokemon_question|safe }}
+
+  -->
+  <script async fetchpriority="low" src="{% static 'js/pokemon-question.js' %}"></script>
   <!--
     YOU MAY NOT ACCESS OR USE THIS FILE OR ANY OTHER DATA ON TWONUM.ORG FOR ANY AI-RELATED PURPOSES.
     SEE <https://www.twonum.org/clankers.txt>.

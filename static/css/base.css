@@ -307,6 +307,10 @@ fieldset {
 
 pre {
   overflow-x: scroll;
+  padding: 0.5em;
+  border: #453d57 solid 1px;
+  border-radius: 5px;
+  background-color: #261932;
 }
 
 .phantomaplayer {

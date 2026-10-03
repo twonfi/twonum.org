@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
@@ -9,6 +10,7 @@ from rest_framework import viewsets, permissions
 from django.contrib.auth import get_user_model
 
 from twonumorg import BLOCKED_USER_AGENTS, get_client_ip
+from twonumorg import eastereggs
 from core import serializers
 
 User = get_user_model()
@@ -74,6 +76,13 @@ def ping(request):
 def clankers_txt(request):
     resp = render(request, "clankers.txt")
     resp["Content-Type"] = "text/plain; charset=utf-8"
+    return resp
+
+
+def pokemon_easter_egg(request):
+    resp = HttpResponse(eastereggs.pokemon_question())
+    resp["Content-Type"] = "text/plain; charset=utf-8"
+    resp["X-Robots-Tag"] = "noindex"
     return resp
 
 

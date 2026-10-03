@@ -74,6 +74,7 @@ urlpatterns = [
     path("pronums/", include("pronums.urls")),
     path("music/", include("music.urls")),
     path("folks/", include("cityfolk.urls")),
+    path("easteregg/", core.views.pokemon_easter_egg),
     path("", include("home.urls")),
 ]
 
