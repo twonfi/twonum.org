@@ -37,15 +37,15 @@ def pokemon_question(pad: int = 0, comment: str | None = None, name: str = "Cade
     :returns: A formatted, plain-text question with the ``name``.
     """
     # Example: pokemon_question(0, "%s", "Cadence")
-    #                                                  -------
-    #                                                 |> Yes |
-    #                                                  | No  |  <---- %s
-    #   ---------                                      -------
-    #  _|  Rika  | ____________________________________
-    # | ----------                                    |
-    # |  Do you like Pokémon, Cadence?                |
-    # |                                               |
-    # |_______________________________________________|
+    #                                                   -------
+    #                                                  |> Yes |
+    #                                                   | No  |  <-- %s
+    #   ------------                                    -------
+    #  |    Rika    | ____________________________________
+    #   ------------                                     |
+    #    |  Do you like Pokémon, Cadence?                |
+    #    |                                               |
+    #    |_______________________________________________|
 
     if not comment:
         comment = choice(POKEMON_QUESTION_COMMENTS)
@@ -53,10 +53,10 @@ def pokemon_question(pad: int = 0, comment: str | None = None, name: str = "Cade
 
     return f"""{p}                                                 -------
 {p}                                                |> Yes |
-{p}                                                 | No  |  <---- {comment}
-{p}  ----------                                     -------
-{p} _|  Rika  |____________________________________
-{p}| ----------                                    |
-{p}|  Do you like Pokémon, {name+"?":<23} |
-{p}|                                               |
-{p}|_______________________________________________|"""
+{p}                                                 | No  |  <-- {comment}
+{p} ------------                                    -------
+{p}|    Rika    |____________________________________
+{p} ------------                                     |
+{p}  |  Do you like Pokémon, {name+"?":<23} |
+{p}  |                                               |
+{p}  |_______________________________________________|"""
