@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load markdown_extras %}
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/about.css' %}">
@@ -9,16 +8,12 @@
 {% endblock head %}
 
 {% block main %}
-  <p>There's two ways to contact me (both are great!):</p>
-  <ul>
-    <li><b>Email</b> if you want your message to be a bit more <em>personal</em> or want to use OpenPGP/GnuPG.</li>
-    <li><b><a href="https://matrix.org">Matrix</a></b> if you want easy end-to-end encryption or a real-time chat.</li>
-  </ul>
+  <p>There's three ways to contact me. My suggestion is to <strong>use the one that you're most familiar with.</strong></p> 
+  <p>This is so you don't accidentally mess up the encryption. If you only know OpenPGP-encrypted email but know how to use it well (and not leak any messages), then that's great and you should just use it. The same goes for Matrix and Signal.</p>
+  <p>If you don't know Matrix or GnuPG, Signal is a good place to start, mainly because it's much more user-friendly and much harder to mess up.</p>
   <p>Keep reading to learn more!</p>
 
   <h2>Email</h2>
-  <p>I love getting emails from folks! (I wish my inbox was as wonderful as my feeds.)</p>
-
   <h3>Policy</h3>
   <p>There used to be so much more here, but I'll summarize it:</p>
   <ul>
@@ -26,7 +21,6 @@
     <li>
       OpenPGP is supported.
       Use the DANE <code>OPENPGPKEY</code> record or Web Key Directory to receive my OpenPGP key.
-      (Encrypting with my key lessens spam chances; no bots use PGP!)
     </li>
     <li>All emails are read in plain text.
       <a href="https://useplaintext.email/">Use plain text email</a> if possible
@@ -66,8 +60,19 @@
   <hr>
 
   <h2>Matrix</h2>
-  <p>If you want a real-time chat or the easiest end-to-end encryption, talk to me on <a href="https://matrix.org"</a>Matrix</a>!</p>
+  <p>If you want a real-time chat, federation, and end-to-end encryption, talk to me on <a href="https://matrix.org"</a>Matrix</a>!</p>
   <p>Point your client to <code>@twonum:twonum.org</code> or use <a href="https://matrix.to/#/@twonum:twonum.org">matrix.to</a>.</p>
+
+  <h2>Signal</h2>
+  <p><strong>Recommended if you don't know Matrix or OpenPGP.</strong></p>
+  <p>Use this <a href="https://signal.me/#eu/fHg4vl8uzUk6OmWthQYD7lOrAdy0st-1VRk7eCao70X_CzV_FTBKpIPZ_oMsa-H2">Signal contact</a> for easy, secure end-to-end encryption.</p>
+
+  <hr>
+
+  <h2>Other methods</h2>
+  <p><strong><em>These are the only ways to contact me.</em></strong> Other methods use proprietary software, are not end-to-end encrypted, or are a combination of the two. As a result, requests on any other platforms, including those listed on <a href="https://hub.twonum.org/">hub.twonum.org</a>, will be ignored.</p>
+  <p>In particular, <a href="https://cadence.moe/blog/2020-06-06-why-you-shouldnt-trust-discord">Discord</a> "friend" requests will be ignored with extreme prejudice.</p>
+  <p>Just use email, Matrix, or Signal. Please.</p>
 
 {#    <h2>Guestbook</h2>#}
 {#    <p>#}
@@ -79,5 +84,5 @@
 {#      I have one too: <b>{{ time_machine.hits }} requests</b> have been made to this page.#}
 {#    </p>#}
 {#{% include 'core/comments.html' with object=time_machine %}#}
-{% endblock %}
+{% endblock %and}
 
