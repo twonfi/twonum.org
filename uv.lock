@@ -412,16 +412,17 @@ wheels = [
 
 [[package]]
 name = "django-avatar"
-version = "9.0.0"
+version = "10.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "django" },
     { name = "django-appconf" },
     { name = "dnspython" },
     { name = "pillow" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ec/06/d599ec534b6bce2348f2beb1317fb2e9ace730eb6e61cbd0b3c08c47014a/django_avatar-9.0.0.tar.gz", hash = "sha256:55a816df3adc02891aaa11dae1ad72a9f281a586b0a1f703ebaf9cc3a2b0f46d", size = 46054, upload-time = "2026-01-07T21:11:37.592Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/85/cff05d7d3ee42f4427464d5d518d1b913ed3a38e787de0864af2bdc1a622/django_avatar-10.0.0.tar.gz", hash = "sha256:6088c41f35767ad5907c5c65e13b1e3d0f132b7b9786c3ab98419b64ed7133c9", size = 55003, upload-time = "2026-11-11T08:36:51.144Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c7/ea/b66268d8c4219b417fb811b357c3604599ee191c661769815e872be924dc/django_avatar-9.0.0-py3-none-any.whl", hash = "sha256:9bb33525eaa64d19bab1a1d9c305f9185663a5db1ce3cc61195ffa131363c33a", size = 67335, upload-time = "2026-01-07T21:11:35.95Z" },
+    { url = "https://files.pythonhosted.org/packages/5c/da/9580851e02482c811db9c7da56240d3139c48f2b9b4eb8bfbf78393cc909/django_avatar-10.0.0-py3-none-any.whl", hash = "sha256:34cd398e1e5f34b2c847c2232b5ebfba6ce48be77ceccab91effb6009fcb87ad", size = 74370, upload-time = "2026-11-11T08:36:49.722Z" },
 ]
 
 [[package]]
@@ -1222,7 +1223,7 @@ dev = [
 requires-dist = [
     { name = "django", extras = ["argon2"], specifier = "~=6.1.1" },
     { name = "django-allauth", extras = ["mfa", "socialaccount"], specifier = "~=65.21.1" },
-    { name = "django-avatar", specifier = "~=9.0.0" },
+    { name = "django-avatar", specifier = "~=10.0.0" },
     { name = "django-cleanup", specifier = "~=9.0.0" },
     { name = "django-cors-headers", specifier = "~=4.9.0" },
     { name = "django-crispy-forms", specifier = "~=2.4" },
