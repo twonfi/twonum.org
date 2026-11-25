@@ -535,15 +535,14 @@ wheels = [
 
 [[package]]
 name = "django-tz-detect"
-version = "0.5.0"
+version = "0.7.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
-    { name = "pytz" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/db/3e/75b2c2f7005d095cc23bc74a250cd2c3ff1aff232cc35dbb7e4f30084cc4/django-tz-detect-0.5.0.tar.gz", hash = "sha256:b804c562ecd6e1c2a303cc9a88e5ad18df053b07f15453d67984f3f34b038de4", size = 11325, upload-time = "2024-03-19T12:03:26.387Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5e/fe/61700b3d16a53130578d6d37175a59a9d1578467d00c85772ed19e2c8f67/django_tz_detect-0.7.2.tar.gz", hash = "sha256:e5457e04fcfe6221532c0dad704a95978adc17c74b366613c70b289a8190fa8b", size = 18167, upload-time = "2026-11-13T15:38:46.673Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5e/e5/3877abeca4bb1a1fa73d040f89e6560e40206b02eb43cef9fab4efa8682b/django_tz_detect-0.5.0-py3-none-any.whl", hash = "sha256:4dd6e5e4080c2257a205545134f252e51e2c58225de362dc8f05328c88599237", size = 11680, upload-time = "2024-03-19T12:03:24.839Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/d4/ef9df90e939cf437bf6cc6944138cba8350058c6c93c1cc36caf5de8f69b/django_tz_detect-0.7.2-py3-none-any.whl", hash = "sha256:6059ce8e4232d303b57ae51d3a106bb02c90e9903774396900103de2702b81dc", size = 14687, upload-time = "2026-11-13T15:38:45.166Z" },
 ]
 
 [[package]]
@@ -965,15 +964,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pytz"
-version = "2026.3.post1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz", hash = "sha256:2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d", size = 319745, upload-time = "2026-07-25T15:12:07.385Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/0f/7b/39c34ca613b0b198cb866466651b26b045e2009864c5183c979a3b83f383/pytz-2026.3.post1-py2.py3-none-any.whl", hash = "sha256:dd95840dd199baea12d9cc096a1d452caa6596a1c1e4b5f3dbd1541855d5e815", size = 508283, upload-time = "2026-07-25T15:12:05.782Z" },
-]
-
-[[package]]
 name = "pyyaml"
 version = "6.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1230,7 +1220,7 @@ requires-dist = [
     { name = "django-filter", specifier = ">=26.2" },
     { name = "django-ipware", specifier = "~=7.0.1" },
     { name = "django-minify-html", specifier = "~=1.14.0" },
-    { name = "django-tz-detect", specifier = "~=0.5.0" },
+    { name = "django-tz-detect", specifier = "~=0.7.2" },
     { name = "django-widget-tweaks", specifier = "~=1.5.0" },
     { name = "djangorestframework", specifier = "~=3.18.3" },
     { name = "djangorestframework-stubs", specifier = "~=3.18.1" },
